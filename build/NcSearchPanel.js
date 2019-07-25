@@ -173,12 +173,12 @@ var NcSearchPanel = function (_Component) {
                         { className: clsfix + '-btns' },
                         _react2["default"].createElement(
                             _beeButton2["default"],
-                            { colors: 'primary', className: clsfix + '-btns-search', onClck: search },
+                            { colors: 'primary', className: clsfix + '-btns-search', onClick: search },
                             _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-search-light-2' })
                         ),
                         _react2["default"].createElement(
                             _beeButton2["default"],
-                            { colors: 'primary', bordered: true, className: clsfix + '-btns-reset', onClck: reset },
+                            { colors: 'primary', bordered: true, className: clsfix + '-btns-reset', onClick: reset },
                             _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-clean' })
                         )
                     )

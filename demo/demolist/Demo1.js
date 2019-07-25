@@ -34,7 +34,10 @@ class Demo1 extends Component {
         
         return (
             <div>
-                <NcSearchPanel>
+                <NcSearchPanel 
+                    search={()=>{console.log('search')}}
+                    reset={()=>{console.log('reset')}}
+                >
                     <Sample>
                         <FormItem label="姓名" required={true}>
                             <FormControl placeholder="请输入用户名"

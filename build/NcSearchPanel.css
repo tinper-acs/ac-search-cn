@@ -13,11 +13,12 @@
   display: inline-block; }
 
 .nc-search-panel-formitem {
-  width: calc((100% - 100px) / 5);
+  width: calc(100% / 5);
   padding-right: 10px;
   display: inline-block;
   margin-bottom: 8px;
-  position: relative; }
+  position: relative;
+  vertical-align: bottom; }
   .nc-search-panel-formitem-mast {
     position: absolute;
     color: #ff0000;
@@ -26,18 +27,30 @@
     left: 4px; }
   .nc-search-panel-formitem .datepicker-input-group .u-form-control {
     float: unset; }
+  .nc-search-panel-formitem .ref-input-wrap {
+    width: 100% !important; }
+  .nc-search-panel-formitem .u-input-number.u-input-group.simple {
+    display: inline-block; }
+    .nc-search-panel-formitem .u-input-number.u-input-group.simple .u-form-control {
+      float: unset;
+      height: 30px; }
+    .nc-search-panel-formitem .u-input-number.u-input-group.simple .u-input-group-btn {
+      position: absolute;
+      right: 2px; }
+      .nc-search-panel-formitem .u-input-number.u-input-group.simple .u-input-group-btn .icon-group {
+        height: 30px; }
 
 .nc-search-panel-btns {
   width: 100px;
   display: inline-block;
-  height: 30px;
+  height: 32px;
   display: flex;
-  justify-content: flex-end; }
+  justify-content: flex-start; }
   .nc-search-panel-btns .u-button {
     padding: 0;
     min-width: auto;
-    height: 30px;
-    line-height: 30px; }
+    height: 32px;
+    line-height: 32px; }
   .nc-search-panel-btns-search.u-button {
     padding: 0 5px; }
   .nc-search-panel-btns-reset.u-button {

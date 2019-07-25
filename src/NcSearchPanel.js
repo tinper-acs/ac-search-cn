@@ -96,10 +96,10 @@ class NcSearchPanel extends Component {
                             }
                         </div>
                         <div className={`${clsfix}-btns`}>
-                            <Button colors='primary' className={`${clsfix}-btns-search`} onClck={search}>
+                            <Button colors='primary' className={`${clsfix}-btns-search`} onClick={search}>
                                 <Icon type='uf-search-light-2'/>
                             </Button>
-                            <Button colors='primary' bordered className={`${clsfix}-btns-reset`} onClck={reset}>
+                            <Button colors='primary' bordered className={`${clsfix}-btns-reset`} onClick={reset}>
                                 <Icon type='uf-clean'/>
                             </Button>
                         </div>
