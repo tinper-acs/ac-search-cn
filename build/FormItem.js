@@ -45,7 +45,6 @@ var FormItem = function (_Component) {
             if (children.length > 1) {
                 var ary = [];
                 _react2["default"].Children.map(children, function (child) {
-                    console.log(child);
                     ary.push(_react2["default"].cloneElement(child, {
                         placeholder: label
                     }));

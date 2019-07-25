@@ -10,7 +10,6 @@ class FormItem extends Component {
         if(children.length>1){
             let ary = [];
             React.Children.map(children,child=>{
-                    console.log(child)
                     ary.push(React.cloneElement(child,{
                         placeholder:label,
                     }))
