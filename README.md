@@ -1,15 +1,15 @@
-# ac-nc-search-panel
+# nc-search-panel
 
-[![npm version](https://img.shields.io/npm/v/ac-nc-search-panel.svg)](https://www.npmjs.com/package/ac-nc-search-panel)
-[![Build Status](https://img.shields.io/travis/tinper-bee/ac-nc-search-panel/master.svg)](https://travis-ci.org/tinper-bee/ac-nc-search-panel)
-[![Coverage Status](https://coveralls.io/repos/github/tinper-bee/ac-nc-search-panel/badge.svg?branch=master)](https://coveralls.io/github/tinper-bee/ac-nc-search-panel?branch=master)
-[![devDependency Status](https://img.shields.io/david/dev/tinper-bee/ac-nc-search-panel.svg)](https://david-dm.org/tinper-bee/ac-nc-search-panel#info=devDependencies)
-[![NPM downloads](http://img.shields.io/npm/dm/ac-nc-search-panel.svg?style=flat)](https://npmjs.org/package/ac-nc-search-panel)
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/tinper-bee/ac-nc-search-panel.svg)](http://isitmaintained.com/project/tinper-bee/ac-nc-search-panel "Average time to resolve an issue")
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/tinper-bee/ac-nc-search-panel.svg)](http://isitmaintained.com/project/tinper-bee/ac-nc-search-panel "Percentage of issues still open")
+[![npm version](https://img.shields.io/npm/v/nc-search-panel.svg)](https://www.npmjs.com/package/nc-search-panel)
+[![Build Status](https://img.shields.io/travis/tinper-bee/nc-search-panel/master.svg)](https://travis-ci.org/tinper-bee/nc-search-panel)
+[![Coverage Status](https://coveralls.io/repos/github/tinper-bee/nc-search-panel/badge.svg?branch=master)](https://coveralls.io/github/tinper-bee/nc-search-panel?branch=master)
+[![devDependency Status](https://img.shields.io/david/dev/tinper-bee/nc-search-panel.svg)](https://david-dm.org/tinper-bee/nc-search-panel#info=devDependencies)
+[![NPM downloads](http://img.shields.io/npm/dm/nc-search-panel.svg?style=flat)](https://npmjs.org/package/nc-search-panel)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/tinper-bee/nc-search-panel.svg)](http://isitmaintained.com/project/tinper-bee/nc-search-panel "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/tinper-bee/nc-search-panel.svg)](http://isitmaintained.com/project/tinper-bee/nc-search-panel "Percentage of issues still open")
 
 
-react ac-nc-search-panel component for tinper-bee
+react nc-search-panel component for tinper-bee
 
 some description...
 
@@ -36,8 +36,8 @@ some description...
 
 ```sh
 $ npm install -g bee-tools
-$ git clone https://github.com/tinper-bee/ac-nc-search-panel
-$ cd ac-nc-search-panel
+$ git clone https://github.com/tinper-bee/nc-search-panel
+$ cd nc-search-panel
 $ npm install
 $ npm run dev
 ```

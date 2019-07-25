@@ -58,127 +58,127 @@ class Demo1 extends Component {
                     
                     </Sample>
                     <Complex>
-                    <FormItem label="年龄">
-                        <Select 
-                            {
-                            ...getFieldProps('type', {
-                                initialValue: '',
-                            }
-                            )}>
-                            <Option value="">请选择</Option>
-                            {
-                                orderTypes.map((item, index) => {
-                                    return (
-                                        <Option key={index} value={item.code}>{item.name}</Option>
-                                    )
-                                })
-                            }
-                        </Select>
-                    </FormItem>
-                    <FormItem label="年龄">
-                        <FormControl placeholder="请输入年龄"
-                            {...getFieldProps('aaa', {
-                                validateTrigger: 'onBlur',
-                                rules: [{
-                                    required: true, message: '请输入年龄',
-                                }],
-                            }) }
-                        />
-                    </FormItem>
-                    <FormItem label="年龄">
-                        <FormControl placeholder="请输入年龄"
-                            {...getFieldProps('aaa', {
-                                validateTrigger: 'onBlur',
-                                rules: [{
-                                    required: true, message: '请输入年龄',
-                                }],
-                            }) }
-                        />
-                    </FormItem>
-                    <FormItem label="年龄">
-                        <FormControl placeholder="请输入年龄"
-                            {...getFieldProps('aaa', {
-                                validateTrigger: 'onBlur',
-                                rules: [{
-                                    required: true, message: '请输入年龄',
-                                }],
-                            }) }
-                        />
-                    </FormItem>
-                    <FormItem label="年龄">
-                        <FormControl placeholder="请输入年龄"
-                            {...getFieldProps('aaa', {
-                                validateTrigger: 'onBlur',
-                                rules: [{
-                                    required: true, message: '请输入年龄',
-                                }],
-                            }) }
-                        />
-                    </FormItem>
-                    <FormItem label="年龄">
-                        <FormControl placeholder="请输入年龄"
-                            {...getFieldProps('aaa', {
-                                validateTrigger: 'onBlur',
-                                rules: [{
-                                    required: true, message: '请输入年龄',
-                                }],
-                            }) }
-                        />
-                    </FormItem>
-                    <FormItem label="年龄">
-                        <FormControl placeholder="请输入年龄"
-                            {...getFieldProps('aaa', {
-                                validateTrigger: 'onBlur',
-                                rules: [{
-                                    required: true, message: '请输入年龄',
-                                }],
-                            }) }
-                        />
-                    </FormItem>
-                    <div>
-                        <FormItem label="姓名" required={true}>
-                            <FormControl placeholder="请输入用户名"
-                                {...getFieldProps('username', {
+                        <FormItem label="年龄">
+                            <Select 
+                                {
+                                ...getFieldProps('type', {
+                                    initialValue: '',
+                                }
+                                )}>
+                                <Option value="">请选择</Option>
+                                {
+                                    orderTypes.map((item, index) => {
+                                        return (
+                                            <Option key={index} value={item.code}>{item.name}</Option>
+                                        )
+                                    })
+                                }
+                            </Select>
+                        </FormItem>
+                        <FormItem label="年龄">
+                            <FormControl placeholder="请输入年龄"
+                                {...getFieldProps('aaa', {
                                     validateTrigger: 'onBlur',
                                     rules: [{
-                                        required: true, message: '请输入用户名',
+                                        required: true, message: '请输入年龄',
                                     }],
                                 }) }
                             />
                         </FormItem>
-                        <FormItem label="姓名" required={true}>
-                            <FormControl placeholder="请输入用户名"
-                                {...getFieldProps('username', {
+                        <FormItem label="年龄">
+                            <FormControl placeholder="请输入年龄"
+                                {...getFieldProps('aaa', {
                                     validateTrigger: 'onBlur',
                                     rules: [{
-                                        required: true, message: '请输入用户名',
+                                        required: true, message: '请输入年龄',
                                     }],
                                 }) }
                             />
                         </FormItem>
-                    </div>
-                    <div>
-                        <FormItem label="姓名" required={true}>
-                            <FormControl placeholder="请输入用户名"
-                                {...getFieldProps('username', {
+                        <FormItem label="年龄">
+                            <FormControl placeholder="请输入年龄"
+                                {...getFieldProps('aaa', {
                                     validateTrigger: 'onBlur',
                                     rules: [{
-                                        required: true, message: '请输入用户名',
+                                        required: true, message: '请输入年龄',
                                     }],
                                 }) }
                             />
                         </FormItem>
-                        <FormItem label="姓名" required={true}>
-                            <FormControl placeholder="请输入用户名"
-                                {...getFieldProps('username', {
+                        <FormItem label="年龄">
+                            <FormControl placeholder="请输入年龄"
+                                {...getFieldProps('aaa', {
                                     validateTrigger: 'onBlur',
                                     rules: [{
-                                        required: true, message: '请输入用户名',
+                                        required: true, message: '请输入年龄',
                                     }],
                                 }) }
                             />
                         </FormItem>
+                        <FormItem label="年龄">
+                            <FormControl placeholder="请输入年龄"
+                                {...getFieldProps('aaa', {
+                                    validateTrigger: 'onBlur',
+                                    rules: [{
+                                        required: true, message: '请输入年龄',
+                                    }],
+                                }) }
+                            />
+                        </FormItem>
+                        <FormItem label="年龄">
+                            <FormControl placeholder="请输入年龄"
+                                {...getFieldProps('aaa', {
+                                    validateTrigger: 'onBlur',
+                                    rules: [{
+                                        required: true, message: '请输入年龄',
+                                    }],
+                                }) }
+                            />
+                        </FormItem>
+                        <div>
+                            <FormItem label="姓名" required={true}>
+                                <FormControl placeholder="请输入用户名"
+                                    {...getFieldProps('username', {
+                                        validateTrigger: 'onBlur',
+                                        rules: [{
+                                            required: true, message: '请输入用户名',
+                                        }],
+                                    }) }
+                                />
+                            </FormItem>
+                            <FormItem label="姓名" required={true}>
+                                <FormControl placeholder="请输入用户名"
+                                    {...getFieldProps('username', {
+                                        validateTrigger: 'onBlur',
+                                        rules: [{
+                                            required: true, message: '请输入用户名',
+                                        }],
+                                    }) }
+                                />
+                            </FormItem>
                         </div>
+                        <div>
+                            <FormItem label="姓名" required={true}>
+                                <FormControl placeholder="请输入用户名"
+                                    {...getFieldProps('username', {
+                                        validateTrigger: 'onBlur',
+                                        rules: [{
+                                            required: true, message: '请输入用户名',
+                                        }],
+                                    }) }
+                                />
+                            </FormItem>
+                            <FormItem label="姓名" required={true}>
+                                <FormControl placeholder="请输入用户名"
+                                    {...getFieldProps('username', {
+                                        validateTrigger: 'onBlur',
+                                        rules: [{
+                                            required: true, message: '请输入用户名',
+                                        }],
+                                    }) }
+                                />
+                            </FormItem>
+                            </div>
                     </Complex>  
                 </NcSearchPanel>
             </div>

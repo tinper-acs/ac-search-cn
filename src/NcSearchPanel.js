@@ -42,18 +42,24 @@ class NcSearchPanel extends Component {
     getChild=()=>{
         let { children } = this.props;
         let child = [];
-        children.map(item=>{
-            if(this.state.text=='简单查询'&&item.type.name=='Sample'){
-                child = item.props.children;
-            }else if(this.state.text=='复杂查询'&&item.type.name=='Complex'){
-                child = item.props.children;
+        if(children.length>1){
+            children.map(item=>{
+                if(this.state.text=='简单查询'&&item.type.name=='Sample'){
+                    child = item.props.children;
+                }else if(this.state.text=='复杂查询'&&item.type.name=='Complex'){
+                    child = item.props.children;
+                }
+            })
+        }else{
+            if(this.state.text=='简单查询'&&children.type.name=='Sample'){
+                child = children.props.children;
+            }else if(this.state.text=='复杂查询'&&children.type.name=='Complex'){
+                child = children.props.children;
             }
-        })
-        console.log(child)
+        }
         return child;
     }
     render(){
-        console.log(this.props)
         let { clsfix,search,reset } = this.props;
         let ctns = `${clsfix}-ctns`;
         if(!this.state.open)ctns+=' close';
