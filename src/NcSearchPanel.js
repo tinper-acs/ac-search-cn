@@ -21,12 +21,17 @@ const defaultProps = {
     reset:noop
 };
 
+const typeText = {
+    '1':'简单查询',
+    '2':'复杂查询'
+}
+
 class NcSearchPanel extends Component {
     constructor(props){
         super(props);
         this.state={
             open:true,
-            text:'简单查询'
+            type:'1'
         }
     }
     open=()=>{
@@ -34,9 +39,9 @@ class NcSearchPanel extends Component {
             open:!this.state.open
         })
     }
-    onSelect=(item)=>{
+    onSelect=(item)=>{console.log(item)
         this.setState({
-            text:item.item.props.children
+            type:item.selectedKeys[0]
         })
     }
     getChild=()=>{
@@ -44,16 +49,16 @@ class NcSearchPanel extends Component {
         let child = [];
         if(children.length>1){
             children.map(item=>{
-                if(this.state.text=='简单查询'&&item.type.name=='Sample'){
+                if(this.state.type=='1'&&item.type.name=='Sample'){
                     child = item.props.children;
-                }else if(this.state.text=='复杂查询'&&item.type.name=='Complex'){
+                }else if(this.state.type=='2'&&item.type.name=='Complex'){
                     child = item.props.children;
                 }
             })
         }else{
-            if(this.state.text=='简单查询'&&children.type.name=='Sample'){
+            if(this.state.type=='1'&&children.type.name=='Sample'){
                 child = children.props.children;
-            }else if(this.state.text=='复杂查询'&&children.type.name=='Complex'){
+            }else if(this.state.type=='2'&&children.type.name=='Complex'){
                 child = children.props.children;
             }
         }
@@ -80,7 +85,7 @@ class NcSearchPanel extends Component {
                             trigger={['click']}
                             overlay={menus}
                             animation="slide-up">
-                            <span>{this.state.text} <Icon type='uf-triangle-down'/></span>
+                            <span>{typeText[this.state.type]} <Icon type='uf-triangle-down'/></span>
                         </Dropdown>
                     </span>
 

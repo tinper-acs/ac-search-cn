@@ -53,6 +53,11 @@ var defaultProps = {
     reset: noop
 };
 
+var typeText = {
+    '1': '简单查询',
+    '2': '复杂查询'
+};
+
 var NcSearchPanel = function (_Component) {
     _inherits(NcSearchPanel, _Component);
 
@@ -68,8 +73,9 @@ var NcSearchPanel = function (_Component) {
         };
 
         _this.onSelect = function (item) {
+            console.log(item);
             _this.setState({
-                text: item.item.props.children
+                type: item.selectedKeys[0]
             });
         };
 
@@ -79,16 +85,16 @@ var NcSearchPanel = function (_Component) {
             var child = [];
             if (children.length > 1) {
                 children.map(function (item) {
-                    if (_this.state.text == '简单查询' && item.type.name == 'Sample') {
+                    if (_this.state.type == '1' && item.type.name == 'Sample') {
                         child = item.props.children;
-                    } else if (_this.state.text == '复杂查询' && item.type.name == 'Complex') {
+                    } else if (_this.state.type == '2' && item.type.name == 'Complex') {
                         child = item.props.children;
                     }
                 });
             } else {
-                if (_this.state.text == '简单查询' && children.type.name == 'Sample') {
+                if (_this.state.type == '1' && children.type.name == 'Sample') {
                     child = children.props.children;
-                } else if (_this.state.text == '复杂查询' && children.type.name == 'Complex') {
+                } else if (_this.state.type == '2' && children.type.name == 'Complex') {
                     child = children.props.children;
                 }
             }
@@ -97,7 +103,7 @@ var NcSearchPanel = function (_Component) {
 
         _this.state = {
             open: true,
-            text: '简单查询'
+            type: '1'
         };
         return _this;
     }
@@ -145,7 +151,7 @@ var NcSearchPanel = function (_Component) {
                         _react2["default"].createElement(
                             'span',
                             null,
-                            this.state.text,
+                            typeText[this.state.type],
                             ' ',
                             _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-triangle-down' })
                         )
