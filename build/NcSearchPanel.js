@@ -73,7 +73,6 @@ var NcSearchPanel = function (_Component) {
         };
 
         _this.onSelect = function (item) {
-            console.log(item);
             _this.setState({
                 type: item.selectedKeys[0]
             });
@@ -85,16 +84,16 @@ var NcSearchPanel = function (_Component) {
             var child = [];
             if (children.length > 1) {
                 children.map(function (item) {
-                    if (_this.state.type == '1' && item.type.name == 'Sample') {
+                    if (_this.state.type == '1' && item.type.displayName == 'Sample') {
                         child = item.props.children;
-                    } else if (_this.state.type == '2' && item.type.name == 'Complex') {
+                    } else if (_this.state.type == '2' && item.type.displayName == 'Complex') {
                         child = item.props.children;
                     }
                 });
             } else {
-                if (_this.state.type == '1' && children.type.name == 'Sample') {
+                if (_this.state.type == '1' && children.type.displayName == 'Sample') {
                     child = children.props.children;
-                } else if (_this.state.type == '2' && children.type.name == 'Complex') {
+                } else if (_this.state.type == '2' && children.type.displayName == 'Complex') {
                     child = children.props.children;
                 }
             }

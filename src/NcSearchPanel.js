@@ -39,7 +39,7 @@ class NcSearchPanel extends Component {
             open:!this.state.open
         })
     }
-    onSelect=(item)=>{console.log(item)
+    onSelect=(item)=>{
         this.setState({
             type:item.selectedKeys[0]
         })
@@ -49,16 +49,16 @@ class NcSearchPanel extends Component {
         let child = [];
         if(children.length>1){
             children.map(item=>{
-                if(this.state.type=='1'&&item.type.name=='Sample'){
+                if(this.state.type=='1'&&item.type.displayName=='Sample'){
                     child = item.props.children;
-                }else if(this.state.type=='2'&&item.type.name=='Complex'){
+                }else if(this.state.type=='2'&&item.type.displayName=='Complex'){
                     child = item.props.children;
                 }
             })
         }else{
-            if(this.state.type=='1'&&children.type.name=='Sample'){
+            if(this.state.type=='1'&&children.type.displayName=='Sample'){
                 child = children.props.children;
-            }else if(this.state.type=='2'&&children.type.name=='Complex'){
+            }else if(this.state.type=='2'&&children.type.displayName=='Complex'){
                 child = children.props.children;
             }
         }
