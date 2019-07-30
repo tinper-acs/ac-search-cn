@@ -1,3 +1,13 @@
+<a name="0.0.5"></a>
+## [0.0.5](https://github.com/tinper-bee/nc-search-panel/compare/v0.0.4...v0.0.5) (2019-07-30)
+
+
+### Bug Fixes
+
+* **nc-search-panel:** displayName ([47b5d20](https://github.com/tinper-bee/nc-search-panel/commit/47b5d20))
+
+
+
 <a name="0.0.4"></a>
 ## [0.0.4](https://github.com/tinper-bee/nc-search-panel/compare/v0.0.3...v0.0.4) (2019-07-30)
 
