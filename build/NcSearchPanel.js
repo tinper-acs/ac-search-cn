@@ -160,6 +160,21 @@ var NcSearchPanel = function (_Component) {
                     'span',
                     { className: clsfix + '-selected' },
                     '\u9AD8\u7EA7(\u6682\u4E0D\u53EF\u7528)'
+                ),
+                _react2["default"].createElement(
+                    'span',
+                    { className: clsfix + '-open', onClick: this.open },
+                    this.state.open ? _react2["default"].createElement(
+                        'span',
+                        null,
+                        '\u5C55\u5F00',
+                        _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-up' })
+                    ) : _react2["default"].createElement(
+                        'span',
+                        null,
+                        '\u6536\u8D77',
+                        _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-down' })
+                    )
                 )
             ),
             _react2["default"].createElement(
@@ -187,11 +202,6 @@ var NcSearchPanel = function (_Component) {
                             _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-clean' })
                         )
                     )
-                ),
-                _react2["default"].createElement(
-                    'div',
-                    { className: clsfix + '-open', onClick: this.open },
-                    this.state.open ? _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-2arrow-up' }) : _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-2arrow-down' })
                 )
             )
         );

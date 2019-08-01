@@ -92,6 +92,19 @@ class NcSearchPanel extends Component {
                     <span className={`${clsfix}-selected`}>
                         高级(暂不可用)
                     </span>
+                    <span className={`${clsfix}-open`} onClick={this.open}>
+                        
+                        
+                        {
+                            this.state.open?
+                            <span>
+                            展开<Icon type='uf-arrow-up'/>
+                            </span>
+                            :<span>
+                            收起<Icon type='uf-arrow-down'/>
+                            </span>
+                        }
+                    </span>
                 </div>
                 <div className={`${clsfix}-ctns-out`}>
                     <div className={ctns}>
@@ -108,11 +121,6 @@ class NcSearchPanel extends Component {
                                 <Icon type='uf-clean'/>
                             </Button>
                         </div>
-                    </div>
-                    <div className={`${clsfix}-open`} onClick={this.open}>
-                        {
-                            this.state.open?<Icon type='uf-2arrow-up'/>:<Icon type='uf-2arrow-down'/>
-                        }
                     </div>
                 </div>
             </div>

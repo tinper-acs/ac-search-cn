@@ -160,7 +160,6 @@ class Demo1 extends Component {
                                 />
                             </FormItem>
                         </div>
-                        <div>
                             <FormItem label="姓名" required={true}>
                                 <FormControl placeholder="请输入用户名"
                                     {...getFieldProps('username', {
@@ -181,7 +180,6 @@ class Demo1 extends Component {
                                     }) }
                                 />
                             </FormItem>
-                            </div>
                     </Complex>  
                 </NcSearchPanel>
             </div>
