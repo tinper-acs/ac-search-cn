@@ -79,6 +79,12 @@
             padding: 0 2px;
             margin-left: 5px;
         }
+        &:hover{
+            color: #0073e1;
+            .uf{
+                background: #0073e1;
+            }
+        }
     }
     &-header{
         padding-top: 10px;
@@ -98,5 +104,41 @@
         color: #0073e1;
         margin-left: 24px;
         cursor: pointer;
+    }
+    &-selected-data{
+        width: calc(100% - 250px);
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1;
+        position: relative;
+        top: 2px;
+        padding-left: 20px;
+    }
+    &-selected-sample{
+        cursor: pointer;
+    }
+    &-selected-complex{
+        &-item{
+            line-height: 15px;
+            font-size: 13px;
+            &-title{
+                margin-left: 8px;
+                width: 65px;
+                min-height: 15px;
+                color: #555;
+                text-align: right;
+                word-break: break-all;
+                word-wrap: break-word;
+            }
+            &-ctn{
+                width: 260px;
+                color: #111;
+                margin-left: 12px;
+                word-break: normal;
+                word-wrap: break-word;
+            }
+        }
     }
 }

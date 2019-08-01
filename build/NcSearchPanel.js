@@ -28,6 +28,10 @@ var _beeMenus = require('bee-menus');
 
 var _beeMenus2 = _interopRequireDefault(_beeMenus);
 
+var _beeTooltip = require('bee-tooltip');
+
+var _beeTooltip2 = _interopRequireDefault(_beeTooltip);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -45,7 +49,8 @@ var noop = function noop() {};
 var propTypes = {
     clsfix: _propTypes2["default"].string,
     search: _propTypes2["default"].func,
-    reset: _propTypes2["default"].func
+    reset: _propTypes2["default"].func,
+    selectedData: _propTypes2["default"].object
 };
 var defaultProps = {
     clsfix: 'nc-search-panel',
@@ -100,9 +105,48 @@ var NcSearchPanel = function (_Component) {
             return child;
         };
 
+        _this.getTip = function () {
+            var _this$props = _this.props,
+                clsfix = _this$props.clsfix,
+                selectedData = _this$props.selectedData;
+
+            return _react2["default"].createElement(
+                'span',
+                { className: clsfix + '-selected-complex' },
+                Object.keys(selectedData).map(function (item, index) {
+                    if (selectedData[item] && selectedData[item] != 'undefined') return _react2["default"].createElement(
+                        'div',
+                        { key: index, className: clsfix + '-selected-complex-item' },
+                        _react2["default"].createElement(
+                            'span',
+                            { className: clsfix + '-selected-complex-item-title' },
+                            item,
+                            ':'
+                        ),
+                        _react2["default"].createElement(
+                            'span',
+                            { className: clsfix + '-selected-complex-item-ctn' },
+                            selectedData[item]
+                        )
+                    );
+                })
+            );
+        };
+
+        _this.formatSearchDate = function (selectedData) {
+            for (var attr in selectedData) {
+                if (!selectedData[attr]) {
+                    delete selectedData[attr];
+                }
+            }
+            var length = Object.keys(selectedData).length;
+            return '\u67E5\u8BE2\u6761\u4EF6(' + length + '):   ' + Object.keys(selectedData).join(';');
+        };
+
         _this.state = {
             open: true,
-            type: '1'
+            type: '1',
+            show: false
         };
         return _this;
     }
@@ -111,7 +155,8 @@ var NcSearchPanel = function (_Component) {
         var _props = this.props,
             clsfix = _props.clsfix,
             search = _props.search,
-            reset = _props.reset;
+            reset = _props.reset,
+            selectedData = _props.selectedData;
 
         var ctns = clsfix + '-ctns';
         if (!this.state.open) ctns += ' close';
@@ -130,7 +175,6 @@ var NcSearchPanel = function (_Component) {
                 '\u590D\u6742\u67E5\u8BE2'
             )
         );
-
         return _react2["default"].createElement(
             'div',
             { className: clsfix },
@@ -159,8 +203,21 @@ var NcSearchPanel = function (_Component) {
                 _react2["default"].createElement(
                     'span',
                     { className: clsfix + '-selected' },
-                    '\u9AD8\u7EA7(\u6682\u4E0D\u53EF\u7528)'
+                    '\u9AD8\u7EA7'
                 ),
+                Object.keys(selectedData).length && !this.state.open ? _react2["default"].createElement(
+                    'span',
+                    { className: clsfix + '-selected-data' },
+                    _react2["default"].createElement(
+                        _beeTooltip2["default"],
+                        { inverse: true, placement: 'bottom', overlay: this.getTip() },
+                        _react2["default"].createElement(
+                            'span',
+                            { className: clsfix + '-selected-sample' },
+                            this.formatSearchDate(selectedData)
+                        )
+                    )
+                ) : '',
                 _react2["default"].createElement(
                     'span',
                     { className: clsfix + '-open', onClick: this.open },

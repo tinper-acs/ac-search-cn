@@ -4,6 +4,7 @@ import Icon from 'bee-icon'
 import Button from 'bee-button'
 import Dropdown from 'bee-dropdown';
 import Menu from 'bee-menus';
+import Tooltip from 'bee-tooltip'
 
 const Item = Menu.Item;
 
@@ -13,7 +14,8 @@ const noop = ()=>{}
 const propTypes = {
     clsfix:PropTypes.string,
     search:PropTypes.func,
-    reset:PropTypes.func
+    reset:PropTypes.func,
+    selectedData:PropTypes.object
 };
 const defaultProps = {
     clsfix:'nc-search-panel',
@@ -31,7 +33,8 @@ class NcSearchPanel extends Component {
         super(props);
         this.state={
             open:true,
-            type:'1'
+            type:'1',
+            show:false
         }
     }
     open=()=>{
@@ -64,8 +67,33 @@ class NcSearchPanel extends Component {
         }
         return child;
     }
+    getTip=()=>{
+        let { clsfix,selectedData } = this.props;
+        return (
+            <span className={`${clsfix}-selected-complex`}>
+                {
+                    Object.keys(selectedData).map((item,index)=>{
+                        if(selectedData[item]&&(selectedData[item]!='undefined'))return <div key={index} className={`${clsfix}-selected-complex-item`}>
+                                <span className={`${clsfix}-selected-complex-item-title`}>{item}:</span>
+                                <span className={`${clsfix}-selected-complex-item-ctn`}>{selectedData[item]}</span>
+                            </div>
+                        
+                    })
+                }
+            </span>
+        )
+    }
+    formatSearchDate=(selectedData)=>{
+        for(let attr in selectedData){
+            if(!selectedData[attr]){
+                delete selectedData[attr];
+            }
+        }
+        let length = Object.keys(selectedData).length;
+        return `查询条件(${length}):   ${Object.keys(selectedData).join(';')}`
+    }
     render(){
-        let { clsfix,search,reset } = this.props;
+        let { clsfix,search,reset,selectedData } = this.props;
         let ctns = `${clsfix}-ctns`;
         if(!this.state.open)ctns+=' close';
         const menus = (
@@ -75,7 +103,6 @@ class NcSearchPanel extends Component {
               <Item key="2">复杂查询</Item>
             </Menu>
         );
-
         return(
             <div className={clsfix}>
                 <div className={`${clsfix}-header`} >
@@ -90,11 +117,19 @@ class NcSearchPanel extends Component {
                     </span>
 
                     <span className={`${clsfix}-selected`}>
-                        高级(暂不可用)
+                        高级
                     </span>
+                    {
+                        Object.keys(selectedData).length&&!this.state.open?
+                        <span className={`${clsfix}-selected-data`}>
+                            <Tooltip inverse placement="bottom" overlay={this.getTip()}>
+                                <span className={`${clsfix}-selected-sample`} >
+                                    {this.formatSearchDate(selectedData)}
+                                </span>
+                            </Tooltip>
+                        </span>:''
+                    }
                     <span className={`${clsfix}-open`} onClick={this.open}>
-                        
-                        
                         {
                             this.state.open?
                             <span>
