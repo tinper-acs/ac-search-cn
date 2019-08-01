@@ -1,3 +1,13 @@
+<a name="0.0.7"></a>
+## [0.0.7](https://github.com/tinper-bee/nc-search-panel/compare/v0.0.6...v0.0.7) (2019-08-01)
+
+
+### Features
+
+* **nc-search-panel:** 显示已选数据 ([159acbc](https://github.com/tinper-bee/nc-search-panel/commit/159acbc))
+
+
+
 <a name="0.0.6"></a>
 ## [0.0.6](https://github.com/tinper-bee/nc-search-panel/compare/v0.0.5...v0.0.6) (2019-08-01)
 
