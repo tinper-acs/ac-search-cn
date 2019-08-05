@@ -36,18 +36,19 @@ const translateKeyFunc=(values)=>{
     let obj = {};
     const translateKey = {
         'username':'姓名',
-        'username1':'姓名',
-        'username2':'姓名',
-        'username3':'姓名',
-        'username4':'姓名',
-        'nl':'年龄',
-        'nl1':'年龄',
-        'nl2':'年龄',
-        'nl3':'年龄',
-        'nl4':'年龄',
-        'nl5':'年龄',
-        'nl6':'年龄',
-        'type':'类型'
+        'username1':'姓名1',
+        'username2':'姓名2',
+        'username3':'姓名3',
+        'username4':'姓名4',
+        'nl':'年龄1',
+        'nl1':'年龄2',
+        'nl2':'年龄3',
+        'nl3':'年龄4',
+        'nl4':'年龄5',
+        'nl5':'年龄6',
+        'nl6':'年龄7',
+        'type':'类型',
+        'money':'金额'
     }
     for(let attr in values){
         obj[translateKey[attr]] = values[attr];
@@ -56,18 +57,50 @@ const translateKeyFunc=(values)=>{
     return obj;
 }
 
-class SF extends Component{
-    render(){
+
+
+class Demo1 extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+            searchObj:{}
+        }
+    }
+
+    search=()=>{
+        this.props.form.validateFields((err, values) => {
+            if (err) {
+                console.log('校验失败', values);
+            } else {
+                console.log('校验成功', values);
+                this.setState({
+                    searchObj:translateKeyFunc(values)
+                })
+            }
+        });
+    }
+
+    reset=()=>{
+        this.props.form.resetFields();
+        this.setState({
+            searchObj:{}
+        })
+    }
+
+    render () {
         const { getFieldProps, getFieldError } = this.props.form;
+        console.log(this.state.searchObj)
         return (
             <div>
-                <FormItem label="姓名" required={true}>
+                <NcSearchPanel 
+                    search={this.search}
+                    reset={this.reset}
+                    selectedData={this.state.searchObj}
+                >
+                    <FormItem label="姓名" required={true}>
                     <FormControl placeholder="请输入用户名"
                         {...getFieldProps('username', {
                             validateTrigger: 'onBlur',
-                            rules: [{
-                                required: true, message: '请输入用户名',
-                            }],
                         }) }
                     />
                 </FormItem>
@@ -76,22 +109,9 @@ class SF extends Component{
                         iconStyle='two'
                         {...getFieldProps('money', {
                             validateTrigger: 'onBlur',
-                            rules: [{
-                                required: true, message: '请输入用户名',
-                            }],
                         })}
                     />
                 </FormItem>
-            </div>
-        )
-    }
-}
-
-class CF extends Component{
-    render(){
-        const { getFieldProps, getFieldError } = this.props.form;
-        return (
-            <div>
                 <FormItem label="类型">
                             <Select 
                                 {
@@ -156,20 +176,14 @@ class CF extends Component{
                                 <InputNumber placeholder="请输入用户名" iconStyle='two'
                                     {...getFieldProps('username1', {
                                         validateTrigger: 'onBlur',
-                                        rules: [{
-                                            required: true, message: '请输入用户名',
-                                        }],
                                     }) }
                                 />
                             </FormItem>
-                            <FormItem label="姓名" required={true}>
+                            <FormItem label={['金额最小值','金额最大值']} required={true}>
                                 <InputNumberGroup 
                                     iconStyle='two'
                                     {...getFieldProps('money', {
                                         validateTrigger: 'onBlur',
-                                        rules: [{
-                                            required: true, message: '请输入用户名',
-                                        }],
                                     })}
                                 />
                             </FormItem>
@@ -177,9 +191,6 @@ class CF extends Component{
                                 <FormControl placeholder="请输入用户名"
                                     {...getFieldProps('username3', {
                                         validateTrigger: 'onBlur',
-                                        rules: [{
-                                            required: true, message: '请输入用户名',
-                                        }],
                                     }) }
                                 />
                             </FormItem>
@@ -187,63 +198,10 @@ class CF extends Component{
                                 <FormControl placeholder="请输入用户名"
                                     {...getFieldProps('username4', {
                                         validateTrigger: 'onBlur',
-                                        rules: [{
-                                            required: true, message: '请输入用户名',
-                                        }],
                                     }) }
                                 />
                             </FormItem>
                         </div>
-            </div>
-        )
-    }
-}
-
-
-class Demo1 extends Component {
-    constructor(props){
-        super(props);
-        this.state={
-            searchObj:{}
-        }
-    }
-
-    search=()=>{
-        this.props.form.validateFields((err, values) => {
-            if (err) {
-                console.log('校验失败', values);
-            } else {
-                console.log('校验成功', values);
-                this.setState({
-                    searchObj:translateKeyFunc(values)
-                })
-            }
-        });
-    }
-
-    reset=()=>{
-        this.props.form.resetFields();
-        this.setState({
-            searchObj:{}
-        })
-    }
-
-    render () {
-        const { getFieldProps, getFieldError } = this.props.form;
-        
-        return (
-            <div>
-                <NcSearchPanel 
-                    search={this.search}
-                    reset={this.reset}
-                    selectedData={this.state.searchObj}
-                >
-                    <Sample>
-                        <SF form={this.props.form}/>
-                    </Sample>
-                    <Complex>
-                        <CF form={this.props.form}/>
-                    </Complex>  
                 </NcSearchPanel>
             </div>
         )
