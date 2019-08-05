@@ -50,11 +50,7 @@
     top: -28px;
     width: 100%;
     text-align: center;
-    overflow: hidden;
     display: block;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    height: 30px;
     pointer-events: none; }
     .nc-search-panel-formitem-value-text {
       padding: 5px 10px;

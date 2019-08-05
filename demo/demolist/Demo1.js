@@ -6,10 +6,11 @@
 */
 import React, { Component } from 'react';
 import {  Icon, Button, Label, CitySelect, Rate, Slider, Switch, Checkbox, Radio, Select,  Col,Row , FormControl } from 'tinper-bee';
-import DatePicker from 'bee-datepicker';
 import NcSearchPanel from '../../src';
 import Form from 'bee-form';
 import InputNumber from 'bee-input-number';
+import DatePicker from 'ac-datepicker';
+const { AcRangePicker } = DatePicker;
 
 const InputNumberGroup = InputNumber.InputNumberGroup;
 
@@ -130,9 +131,10 @@ class Demo1 extends Component {
                             </Select>
                         </FormItem>
                         <FormItem label="年龄">
-                            <FormControl placeholder="请输入年龄"
+                            <AcRangePicker placeholder="请选择日期"
+                            format="YYYY-MM-DD"
                                 {...getFieldProps('nl1', {
-                                    validateTrigger: 'onBlur',
+                                    initialValue:[]
                                 }) }
                             />
                         </FormItem>
