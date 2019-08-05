@@ -41,8 +41,30 @@
       right: 2px; }
       .nc-search-panel-formitem .u-input-number.u-input-group.simple .u-input-group-btn .icon-group {
         height: 30px; }
-  .nc-search-panel-formitem .u-input-number-group .u-input-number-group-split {
-    position: unset; }
+  .nc-search-panel-formitem .u-input-number-group {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .nc-search-panel-formitem .u-input-number-group .u-input-number-group-split {
+      position: unset; }
+  .nc-search-panel-formitem-value {
+    position: absolute;
+    z-index: 2;
+    top: -28px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 30px;
+    pointer-events: none; }
+    .nc-search-panel-formitem-value-text {
+      padding: 5px 10px;
+      border-radius: 4px;
+      background: #fff;
+      box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.3); }
 
 .nc-search-panel-btns {
   width: 100px;
@@ -51,7 +73,10 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: start;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  margin-bottom: 9px; }
   .nc-search-panel-btns .u-button {
     padding: 0;
     min-width: auto;

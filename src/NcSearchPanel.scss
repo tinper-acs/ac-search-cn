@@ -49,8 +49,30 @@
             }
         }
         .u-input-number-group {
+            display: flex;
+            justify-content: space-between;
             .u-input-number-group-split{
                 position: unset;
+            }
+        }
+        &-value {
+            // color: #a5adba;
+            position: absolute;
+            z-index: 2;
+            top: -28px;
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+            display: block;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            height: 30px;
+            pointer-events: none;
+            &-text{
+                padding: 5px 10px;
+                border-radius: 4px;
+                background: #fff;
+                box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.3);
             }
         }
     }
@@ -60,6 +82,8 @@
         height: 32px;
         display: flex;
         justify-content: flex-start;
+        align-self: flex-end;
+        margin-bottom: 9px;
         .u-button{
             padding: 0;
             min-width: auto;

@@ -152,24 +152,34 @@ class CF extends Component{
                             />
                         </FormItem>
                         <div>
-                            <FormItem label="姓名" required={true}>
-                                <FormControl placeholder="请输入用户名"
+                            <FormItem label="姓名11" required={true}>
+                                <InputNumber placeholder="请输入用户名" iconStyle='two'
                                     {...getFieldProps('username1', {
                                         validateTrigger: 'onBlur',
+                                        rules: [{
+                                            required: true, message: '请输入用户名',
+                                        }],
                                     }) }
                                 />
                             </FormItem>
                             <FormItem label="姓名" required={true}>
-                                <FormControl placeholder="请输入用户名"
-                                    {...getFieldProps('username2', {
+                                <InputNumberGroup 
+                                    iconStyle='two'
+                                    {...getFieldProps('money', {
                                         validateTrigger: 'onBlur',
-                                    }) }
+                                        rules: [{
+                                            required: true, message: '请输入用户名',
+                                        }],
+                                    })}
                                 />
                             </FormItem>
                             <FormItem label="姓名" required={true}>
                                 <FormControl placeholder="请输入用户名"
                                     {...getFieldProps('username3', {
                                         validateTrigger: 'onBlur',
+                                        rules: [{
+                                            required: true, message: '请输入用户名',
+                                        }],
                                     }) }
                                 />
                             </FormItem>
@@ -177,6 +187,9 @@ class CF extends Component{
                                 <FormControl placeholder="请输入用户名"
                                     {...getFieldProps('username4', {
                                         validateTrigger: 'onBlur',
+                                        rules: [{
+                                            required: true, message: '请输入用户名',
+                                        }],
                                     }) }
                                 />
                             </FormItem>
