@@ -1,3 +1,13 @@
+<a name="0.0.11"></a>
+## [0.0.11](https://github.com/tinper-bee/nc-search-panel/compare/v0.0.10...v0.0.11) (2019-08-05)
+
+
+### Features
+
+* **nc-search-panel:** 日期区间 acRangepicker特殊处理 ([fbd375e](https://github.com/tinper-bee/nc-search-panel/commit/fbd375e))
+
+
+
 <a name="0.0.10"></a>
 ## [0.0.10](https://github.com/tinper-bee/nc-search-panel/compare/v0.0.9...v0.0.10) (2019-08-05)
 
