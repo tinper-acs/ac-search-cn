@@ -106,7 +106,6 @@ class Demo1 extends Component {
                 </FormItem>
                 <FormItem label={['金额最小值','金额最大值']}>
                     <InputNumberGroup 
-                        iconStyle='two'
                         {...getFieldProps('money', {
                             validateTrigger: 'onBlur',
                         })}
@@ -181,10 +180,10 @@ class Demo1 extends Component {
                                     }) }
                                 />
                             </FormItem>
-                            <FormItem label={['金额最小值','金额最大值']} required={true}>
+                            <FormItem label={['金额最小值1','金额最大值2']} required={true}>
                                 <InputNumberGroup 
                                     iconStyle='two'
-                                    {...getFieldProps('money', {
+                                    {...getFieldProps('money11', {
                                         validateTrigger: 'onBlur',
                                     })}
                                 />
