@@ -25,8 +25,9 @@ import 'nc-search-panel/build/NcSearchPanel.css';
 
 |参数|说明|类型|默认值|
 |:---|:-----|:----|:------|
-|FormItem.label|查询表单元素标签|string|-|
-|FormItem.required|查询表单元素是否必填|bool|-|
+|label|查询表单元素标签|string|-|
+|required|查询表单元素是否必填|bool|-|
+|tooltip|鼠标enter时显示内容|string|-|
 
 
  ## 注意事项
