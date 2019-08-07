@@ -1,3 +1,13 @@
+<a name="0.0.13"></a>
+## [0.0.13](https://github.com/tinper-bee/nc-search-panel/compare/v0.0.12...v0.0.13) (2019-08-07)
+
+
+### Features
+
+* **nc-search-panel:** 字体改为13px ([a603ef8](https://github.com/tinper-bee/nc-search-panel/commit/a603ef8))
+
+
+
 <a name="0.0.12"></a>
 ## [0.0.12](https://github.com/tinper-bee/nc-search-panel/compare/v0.0.11...v0.0.12) (2019-08-07)
 
