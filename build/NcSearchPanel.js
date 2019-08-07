@@ -47,6 +47,7 @@ var Item = _beeMenus2["default"].Item;
 var noop = function noop() {};
 
 var propTypes = {
+    title: _propTypes2["default"].node,
     clsfix: _propTypes2["default"].string,
     search: _propTypes2["default"].func,
     reset: _propTypes2["default"].func,
@@ -56,7 +57,8 @@ var propTypes = {
 var defaultProps = {
     clsfix: 'nc-search-panel',
     search: noop,
-    reset: noop
+    reset: noop,
+    title: '条件筛选'
 };
 
 var typeText = {
@@ -161,7 +163,8 @@ var NcSearchPanel = function (_Component) {
             reset = _props.reset,
             selectedData = _props.selectedData,
             hasChose = _props.hasChose,
-            children = _props.children;
+            children = _props.children,
+            title = _props.title;
 
         var ctns = clsfix + '-ctns';
         if (!this.state.open) ctns += ' close';
@@ -204,7 +207,11 @@ var NcSearchPanel = function (_Component) {
                             _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-triangle-down' })
                         )
                     )
-                ) : '',
+                ) : _react2["default"].createElement(
+                    'span',
+                    { className: clsfix + '-case' },
+                    title
+                ),
                 Object.keys(selectedData).length && !this.state.open ? _react2["default"].createElement(
                     'span',
                     { className: clsfix + '-selected-data' },

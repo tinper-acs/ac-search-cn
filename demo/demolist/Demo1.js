@@ -10,10 +10,11 @@ import NcSearchPanel from '../../src';
 import Form from 'bee-form';
 import InputNumber from 'bee-input-number';
 import DatePicker from 'ac-datepicker';
+import SplitArea from 'ac-split-area';
+
+
 const { AcRangePicker } = DatePicker;
-
 const InputNumberGroup = InputNumber.InputNumberGroup;
-
 const { Sample,Complex, FormItem } = NcSearchPanel;
 const Option = Select.Option;
 const orderTypes=[
@@ -54,7 +55,6 @@ const translateKeyFunc=(values)=>{
     for(let attr in values){
         obj[translateKey[attr]] = values[attr];
     }
-    console.log(obj)
     return obj;
 }
 
@@ -89,8 +89,7 @@ class Demo1 extends Component {
     }
 
     render () {
-        const { getFieldProps, getFieldError } = this.props.form;
-        console.log(this.state.searchObj)
+        const { getFieldProps, getFieldError, getFieldValue } = this.props.form;
         return (
             <div>
                 <NcSearchPanel 
@@ -98,7 +97,7 @@ class Demo1 extends Component {
                     reset={this.reset}
                     selectedData={this.state.searchObj}
                 >
-                    <FormItem label="姓名" required={true}>
+                    <FormItem label="姓名" required={true} >
                     <FormControl placeholder="请输入用户名"
                         {...getFieldProps('username', {
                             validateTrigger: 'onBlur',
@@ -113,7 +112,7 @@ class Demo1 extends Component {
                         })}
                     />
                 </FormItem>
-                <FormItem label="类型">
+                <FormItem label="类型" tooltip={'我是值'}>
                             <Select 
                                 {
                                 ...getFieldProps('type', {
@@ -130,7 +129,7 @@ class Demo1 extends Component {
                                 }
                             </Select>
                         </FormItem>
-                        <FormItem label="年龄">
+                        <FormItem label="年龄" >
                             <AcRangePicker placeholder="请选择日期"
                             format="YYYY-MM-DD"
                                 {...getFieldProps('nl1', {
@@ -138,7 +137,7 @@ class Demo1 extends Component {
                                 }) }
                             />
                         </FormItem>
-                        <FormItem label="年龄">
+                        <FormItem label="年龄" >
                             <FormControl placeholder="请输入年龄"
                                 {...getFieldProps('nl2', {
                                     validateTrigger: 'onBlur',
@@ -173,6 +172,7 @@ class Demo1 extends Component {
                                 }) }
                             />
                         </FormItem>
+                        <SplitArea>
                         <div>
                             <FormItem label="姓名11" required={true}>
                                 <InputNumber placeholder="请输入用户名" iconStyle='two'
@@ -204,6 +204,8 @@ class Demo1 extends Component {
                                 />
                             </FormItem>
                         </div>
+                        </SplitArea>
+                        
                 </NcSearchPanel>
             </div>
         )

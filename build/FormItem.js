@@ -8,13 +8,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
 var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _beeTooltip = require('bee-tooltip');
-
-var _beeTooltip2 = _interopRequireDefault(_beeTooltip);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -61,25 +61,17 @@ var FormItem = function (_Component) {
             }
         };
 
-        _this.onClick = function (str) {
-            var show = _this.state.show;
-            if (show) {} else {
-                if (str) {
-                    _this.setState({
-                        show: true
-                    });
-                }
-            }
-        };
-
         _this.getStr = function () {
             var _this$props2 = _this.props,
                 children = _this$props2.children,
-                label = _this$props2.label;
+                label = _this$props2.label,
+                tooltip = _this$props2.tooltip;
 
             var value = children.props.value || '';
             var str = '';
-            if (children.type.displayName == 'InputNumberGroup') {
+            if (tooltip) {
+                str = label + ': ' + tooltip;
+            } else if (children.type.displayName == 'InputNumberGroup') {
                 //金额区间
                 if (value.length > 0 && (value[0] || value[1])) {
                     str = label[0] + ': ' + value[0] + ' , ' + label[1] + ': ' + value[1];
@@ -96,8 +88,53 @@ var FormItem = function (_Component) {
             return str;
         };
 
+        _this.onMouseEnter = function (str) {
+            var show = _this.state.show;
+            if (!show) {
+                if (str) {
+                    console.log('out inner enter');
+                    _this.timer && clearTimeout(_this.timer);
+                    _this.timer = setTimeout(function () {
+                        _this.setState({
+                            show: true
+                        }, function () {
+                            var top = _this.str && _this.str.offsetHeight;
+                            if (top && top > 32) {
+                                _this.setState({
+                                    strTop: '-' + (top + 10) + 'px'
+                                });
+                            }
+                        });
+                    }, 1000);
+                }
+            }
+        };
+
+        _this.mouseLeave = function () {
+            _this.timer && clearTimeout(_this.timer);
+            _this.timer = setTimeout(function () {
+                _this.setState({
+                    show: false
+                });
+            }, 1000);
+        };
+
+        _this.innerMouseEnter = function () {
+            _this.timer && clearTimeout(_this.timer);
+        };
+
+        _this.inneronMouseLeave = function () {
+            _this.timer && clearTimeout(_this.timer);
+            _this.timer = setTimeout(function () {
+                _this.setState({
+                    show: false
+                });
+            }, 2000);
+        };
+
         _this.state = {
-            show: false
+            show: false,
+            strTop: '-28px'
         };
 
         return _this;
@@ -115,18 +152,20 @@ var FormItem = function (_Component) {
             'div',
             { className: classes,
                 onMouseEnter: function onMouseEnter() {
-                    _this2.onClick(str);
-                }, onMouseLeave: function onMouseLeave() {
-                    _this2.setState({
-                        show: false
-                    });
-                } },
+                    _this2.onMouseEnter(str);
+                },
+                onMouseLeave: this.mouseLeave },
             this.state.show ? _react2["default"].createElement(
                 'span',
-                { className: 'nc-search-panel-formitem-value' },
+                { className: 'nc-search-panel-formitem-value',
+                    onMouseEnter: this.innerMouseEnter,
+                    onMouseLeave: this.inneronMouseLeave,
+                    style: { 'top': this.state.strTop } },
                 _react2["default"].createElement(
                     'span',
-                    { className: 'nc-search-panel-formitem-value-text' },
+                    { className: 'nc-search-panel-formitem-value-text ' + (this.state.strTop == '-28px' ? '' : 'top'), ref: function ref(_ref) {
+                            return _this2.str = _ref;
+                        } },
                     str
                 )
             ) : '',

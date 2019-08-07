@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import Tooltip from 'bee-tooltip';
 
 const propTypes = {
     label:PropTypes.string.isRequired,
@@ -15,7 +15,8 @@ class FormItem extends Component {
     constructor(props){
         super(props);
         this.state = {
-            show:false
+            show:false,
+            strTop:'-28px'
         }
         
     }
@@ -37,24 +38,13 @@ class FormItem extends Component {
                     })
         }
     }
-    onClick=(str)=>{
-        let show = this.state.show;
-        if(show){
-
-        }else{
-            if(str){
-                this.setState({
-                    show:true
-                })
-            }
-        }
-    }
-
     getStr=()=>{
-        let { children, label} = this.props;
+        let { children, label, tooltip} = this.props;
         let value = children.props.value||'';
         let str = '';
-        if(children.type.displayName=='InputNumberGroup'){//金额区间
+        if(tooltip){
+            str = `${label}: ${tooltip}`;
+        }else if(children.type.displayName=='InputNumberGroup'){//金额区间
             if(value.length>0&&((value[0])||(value[1]))){
                 str = `${label[0]}: ${value[0]} , ${label[1]}: ${value[1]}`;
             }
@@ -68,6 +58,51 @@ class FormItem extends Component {
         }
         return str;
     }
+
+    onMouseEnter=(str)=>{
+        let show = this.state.show;
+        if(!show){
+            if(str){ console.log('out inner enter')
+                this.timer&&clearTimeout(this.timer)
+                this.timer=setTimeout(()=>{
+                    this.setState({
+                        show:true
+                    },()=>{
+                        let top = this.str&&this.str.offsetHeight;
+                        if(top&&top>32){
+                            this.setState({
+                                strTop:`-${top+10}px`
+                            })
+                        }
+                    })
+                },1000)
+                
+            }
+        }
+    }
+
+    mouseLeave = ()=>{
+        this.timer&&clearTimeout(this.timer)
+        this.timer = setTimeout(()=>{
+            this.setState({
+                show:false
+            })
+        },1000)
+    }
+
+    innerMouseEnter=()=>{
+        this.timer&&clearTimeout(this.timer);
+    }
+
+    inneronMouseLeave=()=>{
+        this.timer&&clearTimeout(this.timer)
+        this.timer = setTimeout(()=>{
+            this.setState({
+                show:false
+            })
+        },2000)
+    }
+
     render(){
         let { required } = this.props;
         let classes = 'nc-search-panel-formitem';
@@ -75,14 +110,14 @@ class FormItem extends Component {
         let str = this.getStr();
         return (
             <div className={classes} 
-            onMouseEnter={()=>{this.onClick(str)}} onMouseLeave={()=>{
-                this.setState({
-                    show:false
-                })
-            }} >
+            onMouseEnter={()=>{this.onMouseEnter(str)}} 
+            onMouseLeave={this.mouseLeave} >
                 {
-                    this.state.show?<span className='nc-search-panel-formitem-value'>
-                                        <span className='nc-search-panel-formitem-value-text'>{str}</span>
+                    this.state.show?<span className='nc-search-panel-formitem-value' 
+                                    onMouseEnter={this.innerMouseEnter} 
+                                    onMouseLeave={this.inneronMouseLeave} 
+                                    style={{'top':this.state.strTop}}>
+                                        <span className={`nc-search-panel-formitem-value-text ${this.state.strTop=='-28px'?'':'top'}`} ref={ref=>this.str = ref}>{str}</span>
                                     </span>:''
                 }
                 {

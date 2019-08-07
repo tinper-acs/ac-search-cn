@@ -12,6 +12,7 @@ const Item = Menu.Item;
 const noop = ()=>{}
 
 const propTypes = {
+    title:PropTypes.node,
     clsfix:PropTypes.string,
     search:PropTypes.func,
     reset:PropTypes.func,
@@ -21,7 +22,8 @@ const propTypes = {
 const defaultProps = {
     clsfix:'nc-search-panel',
     search:noop,
-    reset:noop
+    reset:noop,
+    title:'条件筛选'
 };
 
 const typeText = {
@@ -96,7 +98,7 @@ class NcSearchPanel extends Component {
         return `查询条件(${length}):   ${Object.keys(selectedData).join(';')}`
     }
     render(){
-        let { clsfix,search,reset,selectedData,hasChose,children } = this.props;
+        let { clsfix,search,reset,selectedData,hasChose,children,title } = this.props;
         let ctns = `${clsfix}-ctns`;
         if(!this.state.open)ctns+=' close';
         const menus = (
@@ -109,6 +111,7 @@ class NcSearchPanel extends Component {
         return(
             <div className={clsfix}>
                 <div className={`${clsfix}-header`} >
+                
                 {
                     hasChose? <span className={`${clsfix}-case`}>
                     <Dropdown
@@ -118,7 +121,7 @@ class NcSearchPanel extends Component {
                         animation="slide-up">
                         <span>{typeText[this.state.type]} <Icon type='uf-triangle-down'/></span>
                     </Dropdown>
-                </span>:''
+                </span>:<span className={`${clsfix}-case`}>{title}</span>
                 }
                    
 

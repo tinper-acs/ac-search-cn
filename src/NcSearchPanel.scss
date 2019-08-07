@@ -56,7 +56,7 @@
             }
         }
         &-value {
-            // color: #a5adba;
+            padding-right: 10px;
             position: absolute;
             z-index: 2;
             top: -28px;
@@ -68,7 +68,12 @@
                 padding: 5px 10px;
                 border-radius: 4px;
                 background: #fff;
-                box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.3);
+                box-shadow: 1px 1px 10px px rgba(0, 0, 0, 0.3);
+                pointer-events: all;
+                &.top{
+                    text-align: left;
+                    display: block;
+                }
             }
         }
     }

@@ -49,6 +49,7 @@
     .nc-search-panel-formitem .u-input-number-group .u-input-number-group-split {
       position: unset; }
   .nc-search-panel-formitem-value {
+    padding-right: 10px;
     position: absolute;
     z-index: 2;
     top: -28px;
@@ -60,7 +61,11 @@
       padding: 5px 10px;
       border-radius: 4px;
       background: #fff;
-      box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.3); }
+      box-shadow: 1px 1px 10px px rgba(0, 0, 0, 0.3);
+      pointer-events: all; }
+      .nc-search-panel-formitem-value-text.top {
+        text-align: left;
+        display: block; }
 
 .nc-search-panel-btns {
   width: 100px;
@@ -506,5 +511,37 @@
         font-size: 23px;
         color: #f53c32;
         cursor: pointer; }
+
+.ac-split-area-left {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 22px;
+  cursor: pointer;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px; }
+  .ac-split-area-left-text {
+    width: auto;
+    margin-right: 10px; }
+  .ac-split-area-left-line {
+    -ms-flex-positive: 1;
+    flex-grow: 1; }
+    .ac-split-area-left-line-inner {
+      border-bottom: 1px dashed #d9d9d9;
+      width: 100%;
+      display: inline-block;
+      position: relative;
+      top: -5px; }
+
+.ac-split-area-ctn {
+  height: 0; }
+
+.ac-split-area-ctn.open {
+  height: auto; }
+
+.ac-split-area .ac-split-area-ctn.open {
+  padding-top: 10px; }
 
 /*# sourceMappingURL=demo.css.map */
