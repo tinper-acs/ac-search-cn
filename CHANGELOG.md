@@ -1,3 +1,8 @@
+<a name="0.0.15"></a>
+## [0.0.15](https://github.com/tinper-bee/nc-search-panel/compare/v0.0.14...v0.0.15) (2019-08-07)
+
+
+
 <a name="0.0.14"></a>
 ## [0.0.14](https://github.com/tinper-bee/nc-search-panel/compare/v0.0.13...v0.0.14) (2019-08-07)
 
