@@ -8,10 +8,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
 var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
@@ -92,7 +88,6 @@ var FormItem = function (_Component) {
             var show = _this.state.show;
             if (!show) {
                 if (str) {
-                    console.log('out inner enter');
                     _this.timer && clearTimeout(_this.timer);
                     _this.timer = setTimeout(function () {
                         _this.setState({

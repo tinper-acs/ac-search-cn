@@ -97,7 +97,7 @@ class Demo1 extends Component {
                     reset={this.reset}
                     selectedData={this.state.searchObj}
                 >
-                    <FormItem label="姓名" required={true} >
+                    <FormItem label="姓名" required={true} tooltip="是大大大所大奥迪奥术大师多阿达的骄傲所带来的交首付款垃圾啊首付贷了解施蒂利克发送登陆分水立方">
                     <FormControl placeholder="请输入用户名"
                         {...getFieldProps('username', {
                             validateTrigger: 'onBlur',

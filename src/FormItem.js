@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -62,7 +61,7 @@ class FormItem extends Component {
     onMouseEnter=(str)=>{
         let show = this.state.show;
         if(!show){
-            if(str){ console.log('out inner enter')
+            if(str){
                 this.timer&&clearTimeout(this.timer)
                 this.timer=setTimeout(()=>{
                     this.setState({

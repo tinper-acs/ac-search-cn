@@ -47,7 +47,8 @@
     -ms-flex-pack: justify;
     justify-content: space-between; }
     .nc-search-panel-formitem .u-input-number-group .u-input-number-group-split {
-      position: unset; }
+      position: unset;
+      line-height: 32px; }
   .nc-search-panel-formitem-value {
     padding-right: 10px;
     position: absolute;
@@ -62,7 +63,8 @@
       border-radius: 4px;
       background: #fff;
       box-shadow: 1px 1px 10px px rgba(0, 0, 0, 0.3);
-      pointer-events: all; }
+      pointer-events: all;
+      font-size: 13px; }
       .nc-search-panel-formitem-value-text.top {
         text-align: left;
         display: block; }
@@ -95,12 +97,14 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+  font-size: 12px; }
   .nc-search-panel-open .uf {
     background: #9FABBF;
     color: #fff;
     padding: 0 2px;
-    margin-left: 5px; }
+    margin-left: 5px;
+    font-size: 14px; }
   .nc-search-panel-open:hover {
     color: #0073e1; }
     .nc-search-panel-open:hover .uf {
@@ -455,7 +459,7 @@
     -moz-appearance: textfield; }
 
 .u-input-number-group .u-input-number-out {
-  width: calc( 50% - 20px);
+  width: calc( 50% - 10px);
   display: inline-block; }
 
 .u-input-number-group-split {

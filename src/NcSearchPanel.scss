@@ -53,6 +53,7 @@
             justify-content: space-between;
             .u-input-number-group-split{
                 position: unset;
+                line-height: 32px;
             }
         }
         &-value {
@@ -70,6 +71,7 @@
                 background: #fff;
                 box-shadow: 1px 1px 10px px rgba(0, 0, 0, 0.3);
                 pointer-events: all;
+                font-size: 13px;
                 &.top{
                     text-align: left;
                     display: block;
@@ -103,11 +105,13 @@
        cursor: pointer;
        color: #9FABBF;
        user-select: none;
+       font-size: 12px;
         .uf{
             background: #9FABBF;
             color: #fff;
             padding: 0 2px;
             margin-left: 5px;
+            font-size: 14px;
         }
         &:hover{
             color: #0073e1;
