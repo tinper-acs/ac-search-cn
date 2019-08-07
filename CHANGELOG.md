@@ -1,3 +1,13 @@
+<a name="0.0.14"></a>
+## [0.0.14](https://github.com/tinper-bee/nc-search-panel/compare/v0.0.13...v0.0.14) (2019-08-07)
+
+
+### Features
+
+* **nc-search-panel:** 样式修改 ([c2ef93b](https://github.com/tinper-bee/nc-search-panel/commit/c2ef93b))
+
+
+
 <a name="0.0.13"></a>
 ## [0.0.13](https://github.com/tinper-bee/nc-search-panel/compare/v0.0.12...v0.0.13) (2019-08-07)
 
