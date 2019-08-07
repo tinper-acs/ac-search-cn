@@ -70,7 +70,7 @@ var FormItem = function (_Component) {
             } else if (children.type.displayName == 'InputNumberGroup') {
                 //金额区间
                 if (value.length > 0 && (value[0] || value[1])) {
-                    str = label[0] + ': ' + value[0] + ' , ' + label[1] + ': ' + value[1];
+                    str = label[0] + ': ' + (value[0] || '') + ' , ' + label[1] + ': ' + (value[1] || '');
                 }
             } else if (children.type.displayName == 'acRangepicker') {
                 //日期区间
@@ -94,9 +94,9 @@ var FormItem = function (_Component) {
                             show: true
                         }, function () {
                             var top = _this.str && _this.str.offsetHeight;
-                            if (top && top > 32) {
+                            if (top) {
                                 _this.setState({
-                                    strTop: '-' + (top + 10) + 'px'
+                                    strTop: '-' + (top + 5) + 'px'
                                 });
                             }
                         });
@@ -134,6 +134,15 @@ var FormItem = function (_Component) {
 
         return _this;
     }
+
+    FormItem.prototype.componentWillReceiveProps = function componentWillReceiveProps() {
+        var top = this.str && this.str.offsetHeight;
+        if (top && '-' + top + 'px' != this.state.strTop) {
+            this.setState({
+                strTop: '-' + (top + 5) + 'px'
+            });
+        }
+    };
 
     FormItem.prototype.render = function render() {
         var _this2 = this;

@@ -45,7 +45,7 @@ class FormItem extends Component {
             str = `${label}: ${tooltip}`;
         }else if(children.type.displayName=='InputNumberGroup'){//金额区间
             if(value.length>0&&((value[0])||(value[1]))){
-                str = `${label[0]}: ${value[0]} , ${label[1]}: ${value[1]}`;
+                str = `${label[0]}: ${value[0]||''} , ${label[1]}: ${value[1]||''}`;
             }
         }else if(children.type.displayName=='acRangepicker'){//日期区间
             let format = children.props.format;
@@ -68,9 +68,9 @@ class FormItem extends Component {
                         show:true
                     },()=>{
                         let top = this.str&&this.str.offsetHeight;
-                        if(top&&top>32){
+                        if(top){
                             this.setState({
-                                strTop:`-${top+10}px`
+                                strTop:`-${top+5}px`
                             })
                         }
                     })
@@ -100,6 +100,15 @@ class FormItem extends Component {
                 show:false
             })
         },2000)
+    }
+
+    componentWillReceiveProps(){
+        let top = this.str&&this.str.offsetHeight;
+        if(top&&(`-${top}px`!=this.state.strTop)){
+            this.setState({
+                strTop:`-${top+5}px`
+            })
+        }
     }
 
     render(){

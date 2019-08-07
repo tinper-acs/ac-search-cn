@@ -55,6 +55,14 @@
                 position: unset;
                 line-height: 32px;
             }
+            .u-input-number.u-input-group.simple .u-form-control{
+                padding-right: 12px;
+                border-bottom-right-radius: 3px;
+                border-top-right-radius: 3px;
+            }
+            .u-input-group-btn{
+                display: none;
+            }
         }
         &-value {
             padding-right: 10px;
@@ -72,6 +80,7 @@
                 box-shadow: 1px 1px 10px px rgba(0, 0, 0, 0.3);
                 pointer-events: all;
                 font-size: 13px;
+                word-break: break-all;
                 &.top{
                     text-align: left;
                     display: block;

@@ -45,6 +45,12 @@
     .nc-search-panel-formitem .u-input-number-group .u-input-number-group-split {
       position: unset;
       line-height: 32px; }
+    .nc-search-panel-formitem .u-input-number-group .u-input-number.u-input-group.simple .u-form-control {
+      padding-right: 12px;
+      border-bottom-right-radius: 3px;
+      border-top-right-radius: 3px; }
+    .nc-search-panel-formitem .u-input-number-group .u-input-group-btn {
+      display: none; }
   .nc-search-panel-formitem-value {
     padding-right: 10px;
     position: absolute;
@@ -60,7 +66,8 @@
       background: #fff;
       box-shadow: 1px 1px 10px px rgba(0, 0, 0, 0.3);
       pointer-events: all;
-      font-size: 13px; }
+      font-size: 13px;
+      word-break: break-all; }
       .nc-search-panel-formitem-value-text.top {
         text-align: left;
         display: block; }
