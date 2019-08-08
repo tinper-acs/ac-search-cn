@@ -142,10 +142,10 @@ class NcSearchPanel extends Component {
                         {
                             this.state.open?
                             <span>
-                            展开<Icon type='uf-arrow-up'/>
+                            收起<Icon type='uf-arrow-up'/>
                             </span>
                             :<span>
-                            收起<Icon type='uf-arrow-down'/>
+                            展开<Icon type='uf-arrow-down'/>
                             </span>
                         }
                     </span>

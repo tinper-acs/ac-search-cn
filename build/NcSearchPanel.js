@@ -231,12 +231,12 @@ var NcSearchPanel = function (_Component) {
                     this.state.open ? _react2["default"].createElement(
                         'span',
                         null,
-                        '\u5C55\u5F00',
+                        '\u6536\u8D77',
                         _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-up' })
                     ) : _react2["default"].createElement(
                         'span',
                         null,
-                        '\u6536\u8D77',
+                        '\u5C55\u5F00',
                         _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-down' })
                     )
                 )
