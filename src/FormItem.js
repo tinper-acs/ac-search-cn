@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'mini-store';
 
 const propTypes = {
     label:PropTypes.string.isRequired,
@@ -38,23 +39,30 @@ class FormItem extends Component {
         }
     }
     getStr=()=>{
-        let { children, label, tooltip} = this.props;
+        let { children, label, tooltip,store} = this.props;
+        let toolTips = store.getState().toolTips;
         let value = children.props.value||'';
         let str = '';
         if(tooltip){
             str = `${label}: ${tooltip}`;
+            toolTips[label]=tooltip;
         }else if(children.type.displayName=='InputNumberGroup'){//金额区间
             if(value.length>0&&((value[0])||(value[1]))){
                 str = `${label[0]}: ${value[0]||''} , ${label[1]}: ${value[1]||''}`;
+                toolTips[label[0]]=value[0]||''
+                toolTips[label[1]]=value[1]||''
             }
         }else if(children.type.displayName=='acRangepicker'){//日期区间
             let format = children.props.format;
             if(value.length>0){
                 str = `${label}: ${value[0].format(format)} ~ ${value[1].format(format)}`;
+                toolTips[label]=`${value[0].format(format)} ~ ${value[1].format(format)}`;
             }
         }else if(value){
             str = `${label}: ${value}`;
+            toolTips[label]=value;
         }
+        store.setState({toolTips})
         return str;
     }
 
@@ -140,4 +148,4 @@ class FormItem extends Component {
 
 FormItem.propTypes = propTypes;
 FormItem.defaultProps = defaultProps;
-export default FormItem;
+export default connect()(FormItem);

@@ -32,6 +32,8 @@ var _beeTooltip = require('bee-tooltip');
 
 var _beeTooltip2 = _interopRequireDefault(_beeTooltip);
 
+var _miniStore = require('mini-store');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -109,17 +111,16 @@ var NcSearchPanel = function (_Component) {
         };
 
         _this.getTip = function () {
-            var _this$props = _this.props,
-                clsfix = _this$props.clsfix,
-                selectedData = _this$props.selectedData;
+            var clsfix = _this.props.clsfix;
 
+            var toolTips = _this.store.getState().toolTips;
             return _react2["default"].createElement(
                 'span',
                 { className: clsfix + '-selected-complex' },
-                Object.keys(selectedData).map(function (item, index) {
-                    var v = selectedData[item];
-                    if (Object.prototype.toString.call(v) == '[object Array]') v = v.join(' ~ ');
-                    if (selectedData[item] && selectedData[item] != 'undefined') return _react2["default"].createElement(
+                Object.keys(toolTips).map(function (item, index) {
+                    var v = toolTips[item];
+                    // if(Object.prototype.toString.call(v)=='[object Array]')v=v.join(' ~ ');
+                    if (toolTips[item] && toolTips[item] != 'undefined') return _react2["default"].createElement(
                         'div',
                         { key: index, className: clsfix + '-selected-complex-item' },
                         _react2["default"].createElement(
@@ -153,6 +154,9 @@ var NcSearchPanel = function (_Component) {
             type: '1',
             show: false
         };
+        _this.store = (0, _miniStore.create)({
+            toolTips: {}
+        });
         return _this;
     }
 
@@ -161,11 +165,11 @@ var NcSearchPanel = function (_Component) {
             clsfix = _props.clsfix,
             search = _props.search,
             reset = _props.reset,
-            selectedData = _props.selectedData,
             hasChose = _props.hasChose,
             children = _props.children,
             title = _props.title;
 
+        var toolTips = this.store.getState().toolTips;
         var ctns = clsfix + '-ctns';
         if (!this.state.open) ctns += ' close';
         var menus = _react2["default"].createElement(
@@ -184,86 +188,90 @@ var NcSearchPanel = function (_Component) {
             )
         );
         return _react2["default"].createElement(
-            'div',
-            { className: clsfix },
+            _miniStore.Provider,
+            { store: this.store },
             _react2["default"].createElement(
                 'div',
-                { className: clsfix + '-header' },
-                hasChose ? _react2["default"].createElement(
-                    'span',
-                    { className: clsfix + '-case' },
-                    _react2["default"].createElement(
-                        _beeDropdown2["default"],
-                        {
-                            overlayClassName: clsfix + '-case-list',
-                            trigger: ['click'],
-                            overlay: menus,
-                            animation: 'slide-up' },
-                        _react2["default"].createElement(
-                            'span',
-                            null,
-                            typeText[this.state.type],
-                            ' ',
-                            _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-triangle-down' })
-                        )
-                    )
-                ) : _react2["default"].createElement(
-                    'span',
-                    { className: clsfix + '-case' },
-                    title
-                ),
-                Object.keys(selectedData).length && !this.state.open ? _react2["default"].createElement(
-                    'span',
-                    { className: clsfix + '-selected-data' },
-                    _react2["default"].createElement(
-                        _beeTooltip2["default"],
-                        { inverse: true, placement: 'bottom', overlay: this.getTip() },
-                        _react2["default"].createElement(
-                            'span',
-                            { className: clsfix + '-selected-sample' },
-                            this.formatSearchDate(selectedData)
-                        )
-                    )
-                ) : '',
-                _react2["default"].createElement(
-                    'span',
-                    { className: clsfix + '-open', onClick: this.open },
-                    this.state.open ? _react2["default"].createElement(
-                        'span',
-                        null,
-                        '\u6536\u8D77',
-                        _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-up' })
-                    ) : _react2["default"].createElement(
-                        'span',
-                        null,
-                        '\u5C55\u5F00',
-                        _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-down' })
-                    )
-                )
-            ),
-            _react2["default"].createElement(
-                'div',
-                { className: clsfix + '-ctns-out' },
+                { className: clsfix },
                 _react2["default"].createElement(
                     'div',
-                    { className: ctns },
-                    _react2["default"].createElement(
-                        'div',
-                        { className: clsfix + '-ctn' },
-                        hasChose ? this.getChild() : children
-                    ),
-                    _react2["default"].createElement(
-                        'div',
-                        { className: clsfix + '-btns' },
+                    { className: clsfix + '-header' },
+                    hasChose ? _react2["default"].createElement(
+                        'span',
+                        { className: clsfix + '-case' },
                         _react2["default"].createElement(
-                            _beeButton2["default"],
-                            { colors: 'primary', className: clsfix + '-btns-search', onClick: search },
-                            _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-search-light-2' })
+                            _beeDropdown2["default"],
+                            {
+                                overlayClassName: clsfix + '-case-list',
+                                trigger: ['click'],
+                                overlay: menus,
+                                animation: 'slide-up' },
+                            _react2["default"].createElement(
+                                'span',
+                                null,
+                                typeText[this.state.type],
+                                ' ',
+                                _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-triangle-down' })
+                            )
+                        )
+                    ) : _react2["default"].createElement(
+                        'span',
+                        { className: clsfix + '-case' },
+                        title
+                    ),
+                    Object.keys(toolTips).length && !this.state.open ? _react2["default"].createElement(
+                        'span',
+                        { className: clsfix + '-selected-data' },
+                        _react2["default"].createElement(
+                            _beeTooltip2["default"],
+                            { inverse: true, placement: 'bottom', overlay: this.getTip() },
+                            _react2["default"].createElement(
+                                'span',
+                                { className: clsfix + '-selected-sample' },
+                                this.formatSearchDate(toolTips)
+                            )
+                        )
+                    ) : '',
+                    _react2["default"].createElement(
+                        'span',
+                        { className: clsfix + '-open', onClick: this.open },
+                        this.state.open ? _react2["default"].createElement(
+                            'span',
+                            null,
+                            '\u6536\u8D77',
+                            _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-up' })
+                        ) : _react2["default"].createElement(
+                            'span',
+                            null,
+                            '\u5C55\u5F00',
+                            _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-down' })
+                        )
+                    )
+                ),
+                _react2["default"].createElement(
+                    'div',
+                    { className: clsfix + '-ctns-out' },
+                    _react2["default"].createElement(
+                        'div',
+                        { className: ctns },
+                        _react2["default"].createElement(
+                            'div',
+                            { className: clsfix + '-ctn' },
+                            hasChose ? this.getChild() : children
                         ),
                         _react2["default"].createElement(
-                            _beeButton2["default"],
-                            { colors: 'primary', bordered: true, className: clsfix + '-btns-reset', onClick: reset },
-                            _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-clean' })
+                            'div',
+                            { className: clsfix + '-btns' },
+                            _react2["default"].createElement(
+                                _beeButton2["default"],
+                                { colors: 'primary', className: clsfix + '-btns-search', onClick: search },
+                                _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-search-light-2' })
+                            ),
+                            _react2["default"].createElement(
+                                _beeButton2["default"],
+                                { colors: 'primary', bordered: true, className: clsfix + '-btns-reset', onClick: reset },
+                                _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-clean' })
+                            )
                         )
                     )
                 )

@@ -12,6 +12,8 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _miniStore = require('mini-store');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -61,26 +63,34 @@ var FormItem = function (_Component) {
             var _this$props2 = _this.props,
                 children = _this$props2.children,
                 label = _this$props2.label,
-                tooltip = _this$props2.tooltip;
+                tooltip = _this$props2.tooltip,
+                store = _this$props2.store;
 
+            var toolTips = store.getState().toolTips;
             var value = children.props.value || '';
             var str = '';
             if (tooltip) {
                 str = label + ': ' + tooltip;
+                toolTips[label] = tooltip;
             } else if (children.type.displayName == 'InputNumberGroup') {
                 //金额区间
                 if (value.length > 0 && (value[0] || value[1])) {
                     str = label[0] + ': ' + (value[0] || '') + ' , ' + label[1] + ': ' + (value[1] || '');
+                    toolTips[label[0]] = value[0] || '';
+                    toolTips[label[1]] = value[1] || '';
                 }
             } else if (children.type.displayName == 'acRangepicker') {
                 //日期区间
                 var format = children.props.format;
                 if (value.length > 0) {
                     str = label + ': ' + value[0].format(format) + ' ~ ' + value[1].format(format);
+                    toolTips[label] = value[0].format(format) + ' ~ ' + value[1].format(format);
                 }
             } else if (value) {
                 str = label + ': ' + value;
+                toolTips[label] = value;
             }
+            store.setState({ toolTips: toolTips });
             return str;
         };
 
@@ -189,5 +199,5 @@ var FormItem = function (_Component) {
 
 FormItem.propTypes = propTypes;
 FormItem.defaultProps = defaultProps;
-exports["default"] = FormItem;
+exports["default"] = (0, _miniStore.connect)()(FormItem);
 module.exports = exports['default'];
