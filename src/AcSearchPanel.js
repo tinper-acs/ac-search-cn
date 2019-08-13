@@ -22,7 +22,7 @@ const propTypes = {
     hasChose:PropTypes.bool//是否可以选择查询方案
 };
 const defaultProps = {
-    clsfix:'nc-search-panel',
+    clsfix:'ac-search-cn',
     search:noop,
     reset:noop,
     title:'条件筛选'
@@ -33,7 +33,7 @@ const typeText = {
     '2':'复杂查询'
 }
 
-class NcSearchPanel extends Component {
+class AcSearchPanel extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -183,7 +183,7 @@ class NcSearchPanel extends Component {
     }
 };
 
-NcSearchPanel.propTypes = propTypes;
-NcSearchPanel.defaultProps = defaultProps;
+AcSearchPanel.propTypes = propTypes;
+AcSearchPanel.defaultProps = defaultProps;
 
-export default NcSearchPanel;
+export default AcSearchPanel;

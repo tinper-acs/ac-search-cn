@@ -121,7 +121,7 @@ class FormItem extends Component {
 
     render(){
         let { required } = this.props;
-        let classes = 'nc-search-panel-formitem';
+        let classes = 'ac-search-cn-formitem';
         if(required)classes+=' require';
         let str = this.getStr();
         return (
@@ -129,15 +129,15 @@ class FormItem extends Component {
             onMouseEnter={()=>{this.onMouseEnter(str)}} 
             onMouseLeave={this.mouseLeave} >
                 {
-                    this.state.show?<span className='nc-search-panel-formitem-value' 
+                    this.state.show?<span className='ac-search-cn-formitem-value' 
                                     onMouseEnter={this.innerMouseEnter} 
                                     onMouseLeave={this.inneronMouseLeave} 
                                     style={{'top':this.state.strTop}}>
-                                        <span className={`nc-search-panel-formitem-value-text ${this.state.strTop=='-28px'?'':'top'}`} ref={ref=>this.str = ref}>{str}</span>
+                                        <span className={`ac-search-cn-formitem-value-text ${this.state.strTop=='-28px'?'':'top'}`} ref={ref=>this.str = ref}>{str}</span>
                                     </span>:''
                 }
                 {
-                    required?<span className='nc-search-panel-formitem-mast'>*</span>:''
+                    required?<span className='ac-search-cn-formitem-mast'>*</span>:''
                 }
                 { this.getChild() }
             </div>

@@ -159,7 +159,7 @@ var FormItem = function (_Component) {
 
         var required = this.props.required;
 
-        var classes = 'nc-search-panel-formitem';
+        var classes = 'ac-search-cn-formitem';
         if (required) classes += ' require';
         var str = this.getStr();
         return _react2["default"].createElement(
@@ -171,13 +171,13 @@ var FormItem = function (_Component) {
                 onMouseLeave: this.mouseLeave },
             this.state.show ? _react2["default"].createElement(
                 'span',
-                { className: 'nc-search-panel-formitem-value',
+                { className: 'ac-search-cn-formitem-value',
                     onMouseEnter: this.innerMouseEnter,
                     onMouseLeave: this.inneronMouseLeave,
                     style: { 'top': this.state.strTop } },
                 _react2["default"].createElement(
                     'span',
-                    { className: 'nc-search-panel-formitem-value-text ' + (this.state.strTop == '-28px' ? '' : 'top'), ref: function ref(_ref) {
+                    { className: 'ac-search-cn-formitem-value-text ' + (this.state.strTop == '-28px' ? '' : 'top'), ref: function ref(_ref) {
                             return _this2.str = _ref;
                         } },
                     str
@@ -185,7 +185,7 @@ var FormItem = function (_Component) {
             ) : '',
             required ? _react2["default"].createElement(
                 'span',
-                { className: 'nc-search-panel-formitem-mast' },
+                { className: 'ac-search-cn-formitem-mast' },
                 '*'
             ) : '',
             this.getChild()

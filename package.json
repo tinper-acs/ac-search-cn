@@ -1,22 +1,22 @@
 {
- "name": "nc-search-panel",
+ "name": "ac-search-cn",
  "version": "0.0.19",
- "description": "NcSearchPanel ui component for react",
+ "description": "AcSearch ui component for react",
  "keywords": [
   "react",
   "react-component",
-  "nc-search-panel",
+  "ac-search-cn",
   "iuap-design",
   "tinper-bee",
-  "NcSearchPanel"
+  "AcSearch"
  ],
  "engines": {
   "node": ">=4.0.0"
  },
- "homepage": "https://github.com/tinper-acs/nc-search-panel.git",
+ "homepage": "https://github.com/tinper-acs/ac-search-cn.git",
  "author": "Yonyou FED",
- "repository": "http://github.com/tinper-bee/nc-search-panel",
- "bugs": "https://github.com/tinper-acs/nc-search-panel.git/issues",
+ "repository": "http://github.com/tinper-bee/ac-search-cn",
+ "bugs": "https://github.com/tinper-acs/ac-search-cn.git/issues",
  "license": "MIT",
  "main": "./build/index.js",
  "config": {

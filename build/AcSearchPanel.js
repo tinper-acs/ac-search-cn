@@ -57,7 +57,7 @@ var propTypes = {
     hasChose: _propTypes2["default"].bool //是否可以选择查询方案
 };
 var defaultProps = {
-    clsfix: 'nc-search-panel',
+    clsfix: 'ac-search-cn',
     search: noop,
     reset: noop,
     title: '条件筛选'
@@ -68,11 +68,11 @@ var typeText = {
     '2': '复杂查询'
 };
 
-var NcSearchPanel = function (_Component) {
-    _inherits(NcSearchPanel, _Component);
+var AcSearchPanel = function (_Component) {
+    _inherits(AcSearchPanel, _Component);
 
-    function NcSearchPanel(props) {
-        _classCallCheck(this, NcSearchPanel);
+    function AcSearchPanel(props) {
+        _classCallCheck(this, AcSearchPanel);
 
         var _this = _possibleConstructorReturn(this, _Component.call(this, props));
 
@@ -160,7 +160,7 @@ var NcSearchPanel = function (_Component) {
         return _this;
     }
 
-    NcSearchPanel.prototype.render = function render() {
+    AcSearchPanel.prototype.render = function render() {
         var _props = this.props,
             clsfix = _props.clsfix,
             search = _props.search,
@@ -279,13 +279,13 @@ var NcSearchPanel = function (_Component) {
         );
     };
 
-    return NcSearchPanel;
+    return AcSearchPanel;
 }(_react.Component);
 
 ;
 
-NcSearchPanel.propTypes = propTypes;
-NcSearchPanel.defaultProps = defaultProps;
+AcSearchPanel.propTypes = propTypes;
+AcSearchPanel.defaultProps = defaultProps;
 
-exports["default"] = NcSearchPanel;
+exports["default"] = AcSearchPanel;
 module.exports = exports['default'];
