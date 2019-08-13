@@ -76,6 +76,14 @@
       .nc-search-panel-formitem-value-text.top {
         text-align: left;
         display: block; }
+  .nc-search-panel-formitem .container-refer {
+    height: 32px; }
+    .nc-search-panel-formitem .container-refer input {
+      font-size: 14px;
+      color: #424242;
+      border: 1px solid #a5adba; }
+    .nc-search-panel-formitem .container-refer .ant-input-suffix {
+      color: #a5adba; }
 
 .nc-search-panel-btns {
   width: 100px;

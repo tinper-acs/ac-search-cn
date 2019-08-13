@@ -93,6 +93,17 @@
                 }
             }
         }
+        .container-refer{//参照
+            height: 32px;
+            input{
+                font-size: 14px;
+                color: #424242;
+                border: 1px solid #a5adba;
+            }
+            .ant-input-suffix{
+                color: #a5adba;
+            }
+        }
     }
     &-btns{
         width: 100px;
