@@ -1,3 +1,13 @@
+<a name="0.0.19"></a>
+## [0.0.19](https://github.com/tinper-bee/nc-search-panel/compare/v0.0.18...v0.0.19) (2019-08-13)
+
+
+### Features
+
+* **nc-search-panel:** 适配mdd参照 ([b230c44](https://github.com/tinper-bee/nc-search-panel/commit/b230c44))
+
+
+
 <a name="0.0.18"></a>
 ## [0.0.18](https://github.com/tinper-bee/nc-search-panel/compare/v0.0.17...v0.0.18) (2019-08-09)
 
