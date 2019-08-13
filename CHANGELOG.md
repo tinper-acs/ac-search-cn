@@ -4,7 +4,7 @@
 
 ### Features
 
-* **ac-search-cn:** 适配mdd参照 ([b230c44](https://github.com/tinper-bee/ac-search-cn/commit/b230c44))
+* **nc-search-panel:** 适配mdd参照 ([b230c44](https://github.com/tinper-bee/ac-search-cn/commit/b230c44))
 
 
 
@@ -14,7 +14,7 @@
 
 ### Features
 
-* **ac-search-cn:** font-size ([63164b1](https://github.com/tinper-bee/ac-search-cn/commit/63164b1))
+* **nc-search-panel:** font-size ([63164b1](https://github.com/tinper-bee/ac-search-cn/commit/63164b1))
 
 
 
@@ -39,7 +39,7 @@
 
 ### Features
 
-* **ac-search-cn:** 样式修改 ([c2ef93b](https://github.com/tinper-bee/ac-search-cn/commit/c2ef93b))
+* **nc-search-panel:** 样式修改 ([c2ef93b](https://github.com/tinper-bee/ac-search-cn/commit/c2ef93b))
 
 
 
@@ -49,7 +49,7 @@
 
 ### Features
 
-* **ac-search-cn:** 字体改为13px ([a603ef8](https://github.com/tinper-bee/ac-search-cn/commit/a603ef8))
+* **nc-search-panel:** 字体改为13px ([a603ef8](https://github.com/tinper-bee/ac-search-cn/commit/a603ef8))
 
 
 
@@ -59,7 +59,7 @@
 
 ### Features
 
-* **ac-search-cn:** 样式天气正 ([6111c87](https://github.com/tinper-bee/ac-search-cn/commit/6111c87))
+* **nc-search-panel:** 样式天气正 ([6111c87](https://github.com/tinper-bee/ac-search-cn/commit/6111c87))
 
 
 
@@ -69,7 +69,7 @@
 
 ### Features
 
-* **ac-search-cn:** 日期区间 acRangepicker特殊处理 ([fbd375e](https://github.com/tinper-bee/ac-search-cn/commit/fbd375e))
+* **nc-search-panel:** 日期区间 acRangepicker特殊处理 ([fbd375e](https://github.com/tinper-bee/ac-search-cn/commit/fbd375e))
 
 
 
@@ -79,7 +79,7 @@
 
 ### Features
 
-* **ac-search-cn:** 支持简单查询 ([8c3e9b4](https://github.com/tinper-bee/ac-search-cn/commit/8c3e9b4))
+* **nc-search-panel:** 支持简单查询 ([8c3e9b4](https://github.com/tinper-bee/ac-search-cn/commit/8c3e9b4))
 
 
 
@@ -89,7 +89,7 @@
 
 ### Features
 
-* **ac-search-cn:** 按钮对齐方式 ([0e07dc8](https://github.com/tinper-bee/ac-search-cn/commit/0e07dc8))
+* **nc-search-panel:** 按钮对齐方式 ([0e07dc8](https://github.com/tinper-bee/ac-search-cn/commit/0e07dc8))
 
 
 
@@ -99,7 +99,7 @@
 
 ### Features
 
-* **ac-search-cn:** 新增金额区间 ([1e9148a](https://github.com/tinper-bee/ac-search-cn/commit/1e9148a))
+* **nc-search-panel:** 新增金额区间 ([1e9148a](https://github.com/tinper-bee/ac-search-cn/commit/1e9148a))
 
 
 
@@ -109,7 +109,7 @@
 
 ### Features
 
-* **ac-search-cn:** 显示已选数据 ([159acbc](https://github.com/tinper-bee/ac-search-cn/commit/159acbc))
+* **nc-search-panel:** 显示已选数据 ([159acbc](https://github.com/tinper-bee/ac-search-cn/commit/159acbc))
 
 
 
@@ -124,7 +124,7 @@
 
 ### Bug Fixes
 
-* **ac-search-cn:** displayName ([47b5d20](https://github.com/tinper-bee/ac-search-cn/commit/47b5d20))
+* **nc-search-panel:** displayName ([47b5d20](https://github.com/tinper-bee/ac-search-cn/commit/47b5d20))
 
 
 
@@ -139,7 +139,7 @@
 
 ### Features
 
-* **ac-search-cn:** 去掉多余console ([0c6fe3a](https://github.com/tinper-bee/ac-search-cn/commit/0c6fe3a))
+* **nc-search-panel:** 去掉多余console ([0c6fe3a](https://github.com/tinper-bee/ac-search-cn/commit/0c6fe3a))
 
 
 
@@ -149,7 +149,7 @@
 
 ### Features
 
-* **ac-search-cn:** 样式优化 ([0b80b70](https://github.com/tinper-bee/ac-search-cn/commit/0b80b70))
+* **nc-search-panel:** 样式优化 ([0b80b70](https://github.com/tinper-bee/ac-search-cn/commit/0b80b70))
 
 
 
