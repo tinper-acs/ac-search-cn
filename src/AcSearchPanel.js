@@ -136,8 +136,9 @@ class AcSearchPanel extends Component {
                     {/* <span className={`${clsfix}-selected`}>
                         高级
                     </span> */}
+                    
                     {
-                        Object.keys(toolTips).length&&!this.state.open?
+                        (Object.keys(toolTips).length>0&&(!this.state.open))?
                         <span className={`${clsfix}-selected-data`}>
                             <Tooltip inverse placement="bottom" overlay={this.getTip()}>
                                 <span className={`${clsfix}-selected-sample`} >

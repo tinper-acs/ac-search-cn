@@ -219,7 +219,7 @@ var AcSearchPanel = function (_Component) {
                         { className: clsfix + '-case' },
                         title
                     ),
-                    Object.keys(toolTips).length && !this.state.open ? _react2["default"].createElement(
+                    Object.keys(toolTips).length > 0 && !this.state.open ? _react2["default"].createElement(
                         'span',
                         { className: clsfix + '-selected-data' },
                         _react2["default"].createElement(

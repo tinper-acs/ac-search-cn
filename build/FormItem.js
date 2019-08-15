@@ -78,6 +78,9 @@ var FormItem = function (_Component) {
                     str = label[0] + ': ' + (value[0] || '') + ' , ' + label[1] + ': ' + (value[1] || '');
                     toolTips[label[0]] = value[0] || '';
                     toolTips[label[1]] = value[1] || '';
+                } else {
+                    delete toolTips[label[0]];
+                    delete toolTips[label[1]];
                 }
             } else if (children.type.displayName == 'acRangepicker') {
                 //日期区间
@@ -85,10 +88,14 @@ var FormItem = function (_Component) {
                 if (value.length > 0) {
                     str = label + ': ' + value[0].format(format) + ' ~ ' + value[1].format(format);
                     toolTips[label] = value[0].format(format) + ' ~ ' + value[1].format(format);
+                } else {
+                    delete toolTips[label];
                 }
             } else if (value) {
                 str = label + ': ' + value;
                 toolTips[label] = value;
+            } else {
+                delete toolTips[label];
             }
             store.setState({ toolTips: toolTips });
             return str;
