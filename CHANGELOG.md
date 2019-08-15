@@ -1,3 +1,13 @@
+<a name="0.0.20"></a>
+## [0.0.20](https://github.com/tinper-bee/ac-search-cn/compare/v0.0.19...v0.0.20) (2019-08-15)
+
+
+### Features
+
+* **ac-search-cn:** 更改组件名称完善文档 ([2f45506](https://github.com/tinper-bee/ac-search-cn/commit/2f45506))
+
+
+
 <a name="0.0.19"></a>
 ## [0.0.19](https://github.com/tinper-bee/ac-search-cn/compare/v0.0.18...v0.0.19) (2019-08-13)
 
