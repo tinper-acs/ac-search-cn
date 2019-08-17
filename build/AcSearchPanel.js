@@ -16,10 +16,6 @@ var _beeIcon = require('bee-icon');
 
 var _beeIcon2 = _interopRequireDefault(_beeIcon);
 
-var _beeButton = require('bee-button');
-
-var _beeButton2 = _interopRequireDefault(_beeButton);
-
 var _beeDropdown = require('bee-dropdown');
 
 var _beeDropdown2 = _interopRequireDefault(_beeDropdown);
@@ -33,6 +29,10 @@ var _beeTooltip = require('bee-tooltip');
 var _beeTooltip2 = _interopRequireDefault(_beeTooltip);
 
 var _miniStore = require('mini-store');
+
+var _acBtns = require('ac-btns');
+
+var _acBtns2 = _interopRequireDefault(_acBtns);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -262,16 +262,16 @@ var AcSearchPanel = function (_Component) {
                         _react2["default"].createElement(
                             'div',
                             { className: clsfix + '-btns' },
-                            _react2["default"].createElement(
-                                _beeButton2["default"],
-                                { colors: 'primary', className: clsfix + '-btns-search', onClick: search },
-                                _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-search-light-2' })
-                            ),
-                            _react2["default"].createElement(
-                                _beeButton2["default"],
-                                { colors: 'primary', bordered: true, className: clsfix + '-btns-reset', onClick: reset },
-                                _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-clean' })
-                            )
+                            _react2["default"].createElement(_acBtns2["default"], {
+                                btns: {
+                                    search: {
+                                        onClick: search
+                                    },
+                                    clear: {
+                                        onClick: reset
+                                    }
+                                }
+                            })
                         )
                     )
                 )

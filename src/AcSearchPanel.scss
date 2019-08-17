@@ -1,3 +1,5 @@
+@import '../node_modules/ac-btns/src/Btns.scss';
+
 .ac-search-cn{
     &-ctns-out{
         padding-left: 20px;
@@ -116,8 +118,6 @@
         .u-button{
             padding: 0;
             min-width: auto;
-            height: 32px;
-            line-height: 32px;
         }
         &-search.u-button{
             padding: 0 5px;
