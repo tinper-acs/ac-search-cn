@@ -34,6 +34,10 @@ var _acBtns = require('ac-btns');
 
 var _acBtns2 = _interopRequireDefault(_acBtns);
 
+var _i18n = require('./i18n');
+
+var _i18n2 = _interopRequireDefault(_i18n);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -54,18 +58,30 @@ var propTypes = {
     search: _propTypes2["default"].func,
     reset: _propTypes2["default"].func,
     selectedData: _propTypes2["default"].object,
-    hasChose: _propTypes2["default"].bool //是否可以选择查询方案
+    hasChose: _propTypes2["default"].bool, //是否可以选择查询方案
+    localeCookie: _propTypes2["default"].string //当前语种的cookie key值
 };
 var defaultProps = {
     clsfix: 'ac-search-cn',
     search: noop,
     reset: noop,
-    title: '条件筛选'
+    title: '条件筛选',
+    localeCookie: 'locale'
 };
 
-var typeText = {
-    '1': '简单查询',
-    '2': '复杂查询'
+var getCookie = function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) == name + '=') {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
 };
 
 var AcSearchPanel = function (_Component) {
@@ -139,14 +155,14 @@ var AcSearchPanel = function (_Component) {
             );
         };
 
-        _this.formatSearchDate = function (selectedData) {
+        _this.formatSearchDate = function (selectedData, locale) {
             for (var attr in selectedData) {
                 if (!selectedData[attr]) {
                     delete selectedData[attr];
                 }
             }
             var length = Object.keys(selectedData).length;
-            return '\u67E5\u8BE2\u6761\u4EF6(' + length + '):   ' + Object.keys(selectedData).join(';');
+            return locale.query + '(' + length + '):   ' + Object.keys(selectedData).join(';');
         };
 
         _this.state = {
@@ -167,8 +183,16 @@ var AcSearchPanel = function (_Component) {
             reset = _props.reset,
             hasChose = _props.hasChose,
             children = _props.children,
-            title = _props.title;
+            title = _props.title,
+            localeCookie = _props.localeCookie;
 
+        var locale = _i18n2["default"];
+        if (getCookie(localeCookie) == 'zh_TW') locale = _i18n2["default"].zh_TW;
+        if (getCookie(localeCookie) == 'en_US') locale = _i18n2["default"].en_US;
+        var typeText = {
+            '1': locale.sample,
+            '2': locale.complex
+        };
         var toolTips = this.store.getState().toolTips;
         var ctns = clsfix + '-ctns';
         if (!this.state.open) ctns += ' close';
@@ -179,12 +203,12 @@ var AcSearchPanel = function (_Component) {
             _react2["default"].createElement(
                 Item,
                 { key: '1' },
-                '\u7B80\u5355\u67E5\u8BE2'
+                locale.sample
             ),
             _react2["default"].createElement(
                 Item,
                 { key: '2' },
-                '\u590D\u6742\u67E5\u8BE2'
+                locale.complex
             )
         );
         return _react2["default"].createElement(
@@ -217,7 +241,7 @@ var AcSearchPanel = function (_Component) {
                     ) : _react2["default"].createElement(
                         'span',
                         { className: clsfix + '-case' },
-                        title
+                        locale.title
                     ),
                     Object.keys(toolTips).length > 0 && !this.state.open ? _react2["default"].createElement(
                         'span',
@@ -228,7 +252,7 @@ var AcSearchPanel = function (_Component) {
                             _react2["default"].createElement(
                                 'span',
                                 { className: clsfix + '-selected-sample' },
-                                this.formatSearchDate(toolTips)
+                                this.formatSearchDate(toolTips, locale)
                             )
                         )
                     ) : '',
@@ -238,12 +262,12 @@ var AcSearchPanel = function (_Component) {
                         this.state.open ? _react2["default"].createElement(
                             'span',
                             null,
-                            '\u6536\u8D77',
+                            locale.close,
                             _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-up' })
                         ) : _react2["default"].createElement(
                             'span',
                             null,
-                            '\u5C55\u5F00',
+                            locale.open,
                             _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-down' })
                         )
                     )
@@ -262,7 +286,7 @@ var AcSearchPanel = function (_Component) {
                         _react2["default"].createElement(
                             'div',
                             { className: clsfix + '-btns' },
-                            _react2["default"].createElement(_acBtns2["default"], {
+                            _react2["default"].createElement(_acBtns2["default"], { localeCookie: localeCookie,
                                 btns: {
                                     search: {
                                         onClick: search

@@ -6,6 +6,7 @@ import Menu from 'bee-menus';
 import Tooltip from 'bee-tooltip'
 import { Provider, create } from 'mini-store';
 import Btns from 'ac-btns';
+import i18n from './i18n'
 
 
 const Item = Menu.Item;
@@ -19,20 +20,32 @@ const propTypes = {
     search:PropTypes.func,
     reset:PropTypes.func,
     selectedData:PropTypes.object,
-    hasChose:PropTypes.bool//是否可以选择查询方案
+    hasChose:PropTypes.bool,//是否可以选择查询方案
+    localeCookie:PropTypes.string,//当前语种的cookie key值
 };
 const defaultProps = {
     clsfix:'ac-search-cn',
     search:noop,
     reset:noop,
-    title:'条件筛选'
+    title:'条件筛选',
+    localeCookie:'locale'
 };
 
-const typeText = {
-    '1':'简单查询',
-    '2':'复杂查询'
-}
 
+const getCookie = (name) => {
+    let cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        let cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
 class AcSearchPanel extends Component {
     constructor(props){
         super(props);
@@ -94,25 +107,32 @@ class AcSearchPanel extends Component {
             </span>
         )
     }
-    formatSearchDate=(selectedData)=>{
+    formatSearchDate=(selectedData,locale)=>{
         for(let attr in selectedData){
             if(!selectedData[attr]){
                 delete selectedData[attr];
             }
         }
         let length = Object.keys(selectedData).length;
-        return `查询条件(${length}):   ${Object.keys(selectedData).join(';')}`
+        return `${locale.query}(${length}):   ${Object.keys(selectedData).join(';')}`
     }
     render(){
-        let { clsfix,search,reset,hasChose,children,title } = this.props;
+        let { clsfix,search,reset,hasChose,children,title,localeCookie } = this.props;
+        let locale=i18n;
+        if(getCookie(localeCookie)=='zh_TW')locale=i18n.zh_TW;
+        if(getCookie(localeCookie)=='en_US')locale=i18n.en_US;
+        const typeText = {
+            '1':locale.sample,
+            '2':locale.complex
+        }
         let toolTips = this.store.getState().toolTips;
         let ctns = `${clsfix}-ctns`;
         if(!this.state.open)ctns+=' close';
         const menus = (
             <Menu
               onSelect={this.onSelect}>
-              <Item key="1">简单查询</Item>
-              <Item key="2">复杂查询</Item>
+              <Item key="1">{locale.sample}</Item>
+              <Item key="2">{locale.complex}</Item>
             </Menu>
         );
         return(
@@ -129,7 +149,7 @@ class AcSearchPanel extends Component {
                         animation="slide-up">
                         <span>{typeText[this.state.type]} <Icon type='uf-triangle-down'/></span>
                     </Dropdown>
-                </span>:<span className={`${clsfix}-case`}>{title}</span>
+                </span>:<span className={`${clsfix}-case`}>{locale.title}</span>
                 }
                    
 
@@ -142,7 +162,7 @@ class AcSearchPanel extends Component {
                         <span className={`${clsfix}-selected-data`}>
                             <Tooltip inverse placement="bottom" overlay={this.getTip()}>
                                 <span className={`${clsfix}-selected-sample`} >
-                                    {this.formatSearchDate(toolTips)}
+                                    {this.formatSearchDate(toolTips,locale)}
                                 </span>
                             </Tooltip>
                         </span>:''
@@ -151,10 +171,10 @@ class AcSearchPanel extends Component {
                         {
                             this.state.open?
                             <span>
-                            收起<Icon type='uf-arrow-up'/>
+                            {locale.close}<Icon type='uf-arrow-up'/>
                             </span>
                             :<span>
-                            展开<Icon type='uf-arrow-down'/>
+                            {locale.open}<Icon type='uf-arrow-down'/>
                             </span>
                         }
                     </span>
@@ -167,7 +187,7 @@ class AcSearchPanel extends Component {
                             }
                         </div>
                         <div className={`${clsfix}-btns`}>
-                            <Btns
+                            <Btns localeCookie={localeCookie}
                                 btns={{
                                     search:{
                                         onClick:search,

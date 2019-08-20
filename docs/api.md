@@ -23,6 +23,7 @@ import 'ac-search-cn/build/AcSearchPanel.css';
 |reset|清空回调|func|-|
 |Children|子元素：Complex/Sample 组件|node|-|
 |hasChose|是否可以选择查询方案|node|-|
+|localeCookie|获取多语cookie的key值|string|`locale`|
 
 ### FormItem
 
