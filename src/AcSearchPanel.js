@@ -27,7 +27,6 @@ const defaultProps = {
     clsfix:'ac-search-cn',
     search:noop,
     reset:noop,
-    title:'条件筛选',
     localeCookie:'locale'
 };
 
@@ -149,7 +148,7 @@ class AcSearchPanel extends Component {
                         animation="slide-up">
                         <span>{typeText[this.state.type]} <Icon type='uf-triangle-down'/></span>
                     </Dropdown>
-                </span>:<span className={`${clsfix}-case`}>{locale.title}</span>
+                </span>:<span className={`${clsfix}-case`}>{title?title:locale.title}</span>
                 }
                    
 

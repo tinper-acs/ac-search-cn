@@ -65,7 +65,6 @@ var defaultProps = {
     clsfix: 'ac-search-cn',
     search: noop,
     reset: noop,
-    title: '条件筛选',
     localeCookie: 'locale'
 };
 
@@ -241,7 +240,7 @@ var AcSearchPanel = function (_Component) {
                     ) : _react2["default"].createElement(
                         'span',
                         { className: clsfix + '-case' },
-                        locale.title
+                        title ? title : locale.title
                     ),
                     Object.keys(toolTips).length > 0 && !this.state.open ? _react2["default"].createElement(
                         'span',
