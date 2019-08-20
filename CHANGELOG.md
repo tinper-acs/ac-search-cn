@@ -1,3 +1,13 @@
+<a name="0.0.22"></a>
+## [0.0.22](https://github.com/tinper-bee/ac-search-cn/compare/v0.0.21...v0.0.22) (2019-08-20)
+
+
+### Features
+
+* **ac-search-cn:** 支持多语 ([1f887f7](https://github.com/tinper-bee/ac-search-cn/commit/1f887f7))
+
+
+
 <a name="0.0.21"></a>
 ## [0.0.21](https://github.com/tinper-bee/ac-search-cn/compare/v0.0.20...v0.0.21) (2019-08-17)
 
