@@ -1,3 +1,8 @@
+<a name="0.0.25"></a>
+## [0.0.25](https://github.com/tinper-bee/ac-search-cn/compare/v0.0.24...v0.0.25) (2019-08-23)
+
+
+
 <a name="0.0.24"></a>
 ## [0.0.24](https://github.com/tinper-bee/ac-search-cn/compare/v0.0.23...v0.0.24) (2019-08-22)
 
