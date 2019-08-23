@@ -176,7 +176,7 @@ var FormItem = function (_Component) {
                     _this2.onMouseEnter(str);
                 },
                 onMouseLeave: this.mouseLeave },
-            this.state.show ? _react2["default"].createElement(
+            this.state.show && str ? _react2["default"].createElement(
                 'span',
                 { className: 'ac-search-cn-formitem-value',
                     onMouseEnter: this.innerMouseEnter,

@@ -136,7 +136,7 @@ class FormItem extends Component {
             onMouseEnter={()=>{this.onMouseEnter(str)}} 
             onMouseLeave={this.mouseLeave} >
                 {
-                    this.state.show?<span className='ac-search-cn-formitem-value' 
+                    this.state.show&&str?<span className='ac-search-cn-formitem-value' 
                                     onMouseEnter={this.innerMouseEnter} 
                                     onMouseLeave={this.inneronMouseLeave} 
                                     style={{'top':this.state.strTop}}>
