@@ -102,12 +102,27 @@ var FormItem = function (_Component) {
             } else {
                 delete toolTips[label];
             }
-            store.setState({ toolTips: toolTips });
-            return str;
+            _this.setState(toolTips);
+            _this.setState({
+                str: str
+            });
+            // return str;
         };
 
-        _this.onMouseEnter = function (str) {
-            var show = _this.state.show;
+        _this.setStore = function (obj) {
+            var _this$props3 = _this.props,
+                store = _this$props3.store,
+                label = _this$props3.label;
+
+            var toolTips = store.getState().toolTips;
+            if (toolTips[label] != obj[label]) store.setState({ toolTips: toolTips });
+        };
+
+        _this.onMouseEnter = function () {
+            var _this$state = _this.state,
+                show = _this$state.show,
+                str = _this$state.str;
+
             if (!show) {
                 if (str) {
                     _this.timer && clearTimeout(_this.timer);
@@ -151,7 +166,8 @@ var FormItem = function (_Component) {
 
         _this.state = {
             show: false,
-            strTop: '-28px'
+            strTop: '-28px',
+            str: ''
         };
 
         return _this;
@@ -164,6 +180,11 @@ var FormItem = function (_Component) {
                 strTop: '-' + (top + 5) + 'px'
             });
         }
+        this.getStr();
+    };
+
+    FormItem.prototype.componentDidMount = function componentDidMount() {
+        this.getStr();
     };
 
     FormItem.prototype.render = function render() {
@@ -173,7 +194,7 @@ var FormItem = function (_Component) {
 
         var classes = 'ac-search-cn-formitem';
         if (required) classes += ' require';
-        var str = this.getStr();
+        var str = this.state.str;
         return _react2["default"].createElement(
             'div',
             { className: classes,

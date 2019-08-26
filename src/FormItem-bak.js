@@ -16,7 +16,8 @@ class FormItem extends Component {
         super(props);
         this.state = {
             show:false,
-            strTop:'-28px'
+            strTop:'-28px',
+            str:''
         }
         
     }
@@ -74,12 +75,21 @@ class FormItem extends Component {
         }else{
             delete toolTips[label]
         }
-        store.setState({toolTips})
-        return str;
+        this.setState(toolTips)
+        this.setState({
+            str
+        })
+        // return str;
     }
 
-    onMouseEnter=(str)=>{
-        let show = this.state.show;
+    setStore=(obj)=>{
+        let { store,label } = this.props;
+        let toolTips = store.getState().toolTips;
+        if(toolTips[label]!=obj[label])store.setState({toolTips})
+    }
+
+    onMouseEnter=()=>{
+        let { show,str } = this.state;
         if(!show){
             if(str){
                 this.timer&&clearTimeout(this.timer)
@@ -129,13 +139,18 @@ class FormItem extends Component {
                 strTop:`-${top+5}px`
             })
         }
+        this.getStr();
+    }
+
+    componentDidMount(){
+        this.getStr();
     }
 
     render(){
         let { required } = this.props;
         let classes = 'ac-search-cn-formitem';
         if(required)classes+=' require';
-        let str = this.getStr();
+        let str = this.state.str;
         return (
             <div className={classes} 
             onMouseEnter={()=>{this.onMouseEnter(str)}} 
