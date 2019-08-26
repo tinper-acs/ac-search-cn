@@ -1,3 +1,13 @@
+<a name="0.0.26"></a>
+## [0.0.26](https://github.com/tinper-bee/ac-search-cn/compare/v0.0.25...v0.0.26) (2019-08-26)
+
+
+### Features
+
+* **ac-search-cn:** tooltip判断优化 ([fa446cb](https://github.com/tinper-bee/ac-search-cn/commit/fa446cb))
+
+
+
 <a name="0.0.25"></a>
 ## [0.0.25](https://github.com/tinper-bee/ac-search-cn/compare/v0.0.24...v0.0.25) (2019-08-23)
 
