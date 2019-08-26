@@ -63,7 +63,9 @@
   margin-bottom: 8px;
   position: relative;
   vertical-align: bottom; }
-  .ac-search-cn-formitem input, .ac-search-cn-formitem .u-select .u-select-selection, .ac-search-cn-formitem .u-input-number {
+  .ac-search-cn-formitem input,
+  .ac-search-cn-formitem .u-select .u-select-selection,
+  .ac-search-cn-formitem .u-input-number {
     border-color: #d5d6d9; }
   .ac-search-cn-formitem .u-label {
     display: inline-block;
@@ -144,6 +146,13 @@
     background: #f3f3f3;
     border-color: #e0e0e0;
     color: #2B344B; }
+  .ac-search-cn-formitem input::-webkit-input-placeholder {
+    color: #cccccc !important;
+    font-size: 13px; }
+  .ac-search-cn-formitem .u-select-selection-placeholder,
+  .ac-search-cn-formitem .u-select-search-field-placeholder {
+    color: #cccccc;
+    font-size: 13px; }
 
 .ac-search-cn-btns {
   width: 100px;
