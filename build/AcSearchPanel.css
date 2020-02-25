@@ -35,7 +35,7 @@
     min-width: 48px;
     padding: 4px 5px;
     background-color: #e14c46; }
-  .ac-btns button.ac-btns-item.u-button.ac-btns-clear {
+  .ac-btns button.ac-btns-item.u-button.ac-btns-clear, .ac-btns button.ac-btns-item.u-button.ac-btns-empty {
     min-width: auto;
     color: #111;
     padding: 4px 0;
@@ -123,6 +123,17 @@
   .ac-search-cn-formitem .u-select .u-select-selection,
   .ac-search-cn-formitem .u-input-number {
     border-color: #d5d6d9; }
+  .ac-search-cn-formitem input.u-form-control:hover, .ac-search-cn-formitem .u-select-enabled .u-select-selection:hover, .ac-search-cn-formitem .u-input-number:hover {
+    border-color: #8cc6ff; }
+  .ac-search-cn-formitem input.u-form-control:active, .ac-search-cn-formitem .u-select .u-select-selection:active, .ac-search-cn-formitem .u-input-number:active,
+  .ac-search-cn-formitem input.u-form-control:focus, .ac-search-cn-formitem .u-select .u-select-selection:focus, .ac-search-cn-formitem .u-input-number:focus {
+    border-color: #007ace; }
+  .ac-search-cn-formitem .u-select .u-select-arrow, .ac-search-cn-formitem .datepicker-container .u-input-group-btn {
+    color: #adb4bc; }
+  .ac-search-cn-formitem .u-select .u-select-arrow {
+    right: 20px; }
+  .ac-search-cn-formitem .u-select-selection-placeholder, .ac-search-cn-formitem .u-select-search-field-placeholder {
+    left: 12px; }
   .ac-search-cn-formitem .u-label {
     display: inline-block;
     width: 140px;
