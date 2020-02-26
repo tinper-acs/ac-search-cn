@@ -1,3 +1,13 @@
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/tinper-bee/ac-search-cn/compare/v0.1.0...v0.1.1) (2020-02-26)
+
+
+### Features
+
+* **ac-search-cn:** 清空按钮图标修改 ([d902546](https://github.com/tinper-bee/ac-search-cn/commit/d902546))
+
+
+
 <a name="0.1.0"></a>
 # [0.1.0](https://github.com/tinper-bee/ac-search-cn/compare/v0.0.28...v0.1.0) (2020-02-25)
 
