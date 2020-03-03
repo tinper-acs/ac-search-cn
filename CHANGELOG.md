@@ -1,3 +1,13 @@
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/tinper-bee/ac-search-cn/compare/v0.1.1...v0.1.2) (2020-03-03)
+
+
+### Features
+
+* **ac-search-cn:** css ([a19eb5a](https://github.com/tinper-bee/ac-search-cn/commit/a19eb5a))
+
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/tinper-bee/ac-search-cn/compare/v0.1.0...v0.1.1) (2020-02-26)
 
