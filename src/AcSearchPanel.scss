@@ -1,8 +1,9 @@
 @import '../node_modules/ac-btns/src/Btns.scss';
 
 .ac-search-cn {
+    border-bottom: 1px solid #D0D0D0;
     &-ctns-out {
-        padding-left: 20px;
+        padding-left: 16px;
         background-color: #f3f3f3;
     }
 
@@ -243,7 +244,7 @@
     &-header {
         padding-top: 10px;
         padding-bottom: 5px;
-        padding-left: 20px;
+        padding-left: 16px;
         padding-right: 10px;
         background-color: #f3f3f3;
         min-height: 40px;
