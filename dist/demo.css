@@ -278,7 +278,7 @@
     padding-top: 10px;
     padding-bottom: 5px;
     padding-left: 16px;
-    padding-right: 10px;
+    padding-right: 16px;
     background-color: #f3f3f3;
     min-height: 40px; }
   .ac-search-cn-case {
@@ -319,21 +319,6 @@
       margin-left: 12px;
       word-break: normal;
       word-wrap: break-word; }
-
-.ncc-refer-model.ant-modal.referModal .columnSetting {
-  background: #eceff5; }
-  .ncc-refer-model.ant-modal.referModal .columnSetting .SettingBtn, .ncc-refer-model.ant-modal.referModal .columnSetting .SettingBtn:hover {
-    background: #eceff5; }
-
-.ncc-refer-model.ant-modal.referModal .pagination-new .ant-pagination.mini {
-  text-align: center; }
-
-.ncc-refer-model.ant-modal.referModal .ant-modal-footer {
-  padding: 7px 20px; }
-  .ncc-refer-model.ant-modal.referModal .ant-modal-footer .refer-footer-btns-container button.ant-btn-primary {
-    border: 1px solid #e14c46; }
-  .ncc-refer-model.ant-modal.referModal .ant-modal-footer .refer-footer-btns-container .refer-modal-footer-cancle-btn {
-    margin-left: 8px; }
 
 /* FormGroup */
 /*  Navlayout  */
