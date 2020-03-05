@@ -140,7 +140,8 @@
     .ac-search-cn-formitem input.u-form-control:focus, .ac-search-cn-formitem .u-select .u-select-selection:focus, .ac-search-cn-formitem .u-input-number:focus {
       border-color: #007ace; }
     .ac-search-cn-formitem .u-select .u-select-arrow, .ac-search-cn-formitem .datepicker-container .u-input-group-btn, .ac-search-cn-formitem .datepicker-input-group .u-input-group-btn,
-    .ac-search-cn-formitem .u-input-number.u-input-group > span:first-child, .ac-search-cn-formitem .u-input-number.u-input-group > span:last-child {
+    .ac-search-cn-formitem .u-input-number.u-input-group > span:first-child, .ac-search-cn-formitem .u-input-number.u-input-group > span:last-child,
+    .ac-search-cn-formitem .u-input-group.simple .u-input-group-btn {
       color: #adb4bc; }
     .ac-search-cn-formitem .u-select .u-select-arrow {
       right: 6px; }
