@@ -265,10 +265,6 @@
     .ac-search-cn-btns .u-button {
       padding: 0;
       min-width: auto; }
-    .ac-search-cn-btns-search.u-button {
-      padding: 0 5px; }
-    .ac-search-cn-btns-reset.u-button {
-      margin-left: 6px; }
   .ac-search-cn-open {
     float: right;
     cursor: pointer;
