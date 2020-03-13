@@ -1,9 +1,8 @@
 .ac-btns .ac-btns-item {
-  margin-right: 6px;
+  margin-right: 8px;
   cursor: pointer; }
 
 .ac-btns span.ac-btns-item {
-  margin-right: 6px;
   color: #0073e1;
   font-size: 13px; }
   .ac-btns span.ac-btns-item[disabled] {
@@ -72,6 +71,11 @@
     border-color: #d0d0d0;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2); }
 
+.ac-btns .icon.ac-btns-add, .ac-btns .icon.ac-btns-update, .ac-btns .icon.ac-btns-delete {
+  color: #e14c46; }
+  .ac-btns .icon.ac-btns-add .uf, .ac-btns .icon.ac-btns-update .uf, .ac-btns .icon.ac-btns-delete .uf {
+    padding: 0; }
+
 .u-button-group .ac-btns .u-button {
   float: left;
   min-width: 25px;
@@ -110,8 +114,11 @@
 .ac-btns-dropdown .u-dropdown-menu > .u-dropdown-menu-item-selected:hover {
   background-color: #ebecf0; }
 
+.ac-btns-dropdown .icon.ac-btns-add, .ac-btns-dropdown .icon.ac-btns-update, .ac-btns-dropdown .icon.ac-btns-delete {
+  color: #e14c46; }
+
 .ac-search-cn {
-  border-bottom: 1px solid #D0D0D0; }
+  border-top: 1px solid #D0D0D0; }
   .ac-search-cn-ctns-out {
     padding-left: 16px;
     background-color: #f3f3f3; }
@@ -125,11 +132,13 @@
     display: inline-block; }
   .ac-search-cn-formitem {
     width: calc(100% / 5);
-    padding-right: 10px;
+    padding-right: 8px;
     display: inline-block;
     margin-bottom: 8px;
     position: relative;
     vertical-align: bottom; }
+    .ac-search-cn-formitem .u-form-control {
+      padding: 0 8px; }
     .ac-search-cn-formitem input,
     .ac-search-cn-formitem .u-select .u-select-selection,
     .ac-search-cn-formitem .u-input-number, .ac-search-cn-formitem .u-input-number.u-input-group > span:first-child, .ac-search-cn-formitem .u-input-number.u-input-group > span:last-child {
@@ -143,10 +152,12 @@
     .ac-search-cn-formitem .u-input-number.u-input-group > span:first-child, .ac-search-cn-formitem .u-input-number.u-input-group > span:last-child,
     .ac-search-cn-formitem .u-input-group.simple .u-input-group-btn {
       color: #adb4bc; }
-    .ac-search-cn-formitem .u-select .u-select-arrow {
-      right: 6px; }
+    .ac-search-cn-formitem .u-select .u-select-arrow, .ac-search-cn-formitem .u-input-group.simple .u-input-group-btn {
+      right: 8px; }
     .ac-search-cn-formitem .u-select-selection-placeholder, .ac-search-cn-formitem .u-select-search-field-placeholder {
-      left: 12px; }
+      left: 8px; }
+    .ac-search-cn-formitem .u-select-selection--single .u-select-selection-selected-value {
+      padding-left: 8px; }
     .ac-search-cn-formitem .u-label {
       display: inline-block;
       width: 140px;
@@ -242,7 +253,8 @@
     display: flex;
     justify-content: flex-start;
     align-self: flex-end;
-    margin-bottom: 9px; }
+    margin-bottom: 8px;
+    margin-right: 3px; }
     .ac-search-cn-btns .u-button {
       padding: 0;
       min-width: auto; }
@@ -267,8 +279,8 @@
       .ac-search-cn-open:hover .uf {
         background: #0073e1; }
   .ac-search-cn-header {
-    padding-top: 10px;
-    padding-bottom: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     padding-left: 16px;
     padding-right: 16px;
     background-color: #f3f3f3;
