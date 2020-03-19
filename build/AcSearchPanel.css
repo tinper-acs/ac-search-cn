@@ -118,9 +118,10 @@
   color: #e14c46; }
 
 .ac-search-cn {
-  border-top: 1px solid #D0D0D0; }
+  border-bottom: 1px solid #D0D0D0; }
   .ac-search-cn-ctns-out {
     padding-left: 16px;
+    padding-right: 16px;
     background-color: #f3f3f3; }
   .ac-search-cn-ctns {
     display: flex;
@@ -139,6 +140,9 @@
     vertical-align: bottom; }
     .ac-search-cn-formitem .u-form-control {
       padding: 0 8px; }
+    .ac-search-cn-formitem .u-select .u-select-selection-rendered {
+      margin-left: 0;
+      margin-right: 0; }
     .ac-search-cn-formitem input,
     .ac-search-cn-formitem .u-select .u-select-selection,
     .ac-search-cn-formitem .u-input-number, .ac-search-cn-formitem .u-input-number.u-input-group > span:first-child, .ac-search-cn-formitem .u-input-number.u-input-group > span:last-child {
@@ -228,7 +232,8 @@
       .ac-search-cn-formitem .container-refer input {
         font-size: 14px;
         color: #424242;
-        border: 1px solid #d5d6d9; }
+        border: 1px solid #d5d6d9;
+        padding: 0 7px; }
       .ac-search-cn-formitem .container-refer .ant-input-suffix {
         color: #d5d6d9; }
     .ac-search-cn-formitem .u-form-control[disabled] {
@@ -254,7 +259,7 @@
     justify-content: flex-start;
     align-self: flex-end;
     margin-bottom: 8px;
-    margin-right: 3px; }
+    margin-right: 0; }
     .ac-search-cn-btns .u-button {
       padding: 0;
       min-width: auto; }

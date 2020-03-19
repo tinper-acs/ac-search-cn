@@ -1,9 +1,10 @@
 @import '../node_modules/ac-btns/src/Btns.scss';
 
 .ac-search-cn {
-    border-top: 1px solid #D0D0D0;
+    border-bottom: 1px solid #D0D0D0;
     &-ctns-out {
         padding-left: 16px;
+        padding-right: 16px;
         background-color: #f3f3f3;
     }
 
@@ -30,7 +31,10 @@
         .u-form-control{
             padding: 0 8px;
         }
-
+        .u-select .u-select-selection-rendered{
+            margin-left: 0;
+            margin-right: 0;
+        }
         input,
         .u-select .u-select-selection,
         .u-input-number,.u-input-number.u-input-group>span:first-child,.u-input-number.u-input-group>span:last-child {
@@ -166,6 +170,7 @@
                 font-size: 14px;
                 color: #424242;
                 border: 1px solid #d5d6d9;
+                padding: 0 7px;
             }
 
             .ant-input-suffix {
@@ -208,7 +213,7 @@
         justify-content: flex-start;
         align-self: flex-end;
         margin-bottom: 8px;
-        margin-right: 3px;
+        margin-right: 0;
         .u-button {
             padding: 0;
             min-width: auto;
