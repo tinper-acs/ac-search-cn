@@ -1,3 +1,8 @@
+<a name="0.1.11"></a>
+## [0.1.11](https://github.com/tinper-bee/ac-search-cn/compare/v0.1.10...v0.1.11) (2020-03-23)
+
+
+
 <a name="0.1.10"></a>
 ## [0.1.10](https://github.com/tinper-bee/ac-search-cn/compare/v0.1.9...v0.1.10) (2020-03-20)
 
