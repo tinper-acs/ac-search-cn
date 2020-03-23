@@ -129,7 +129,7 @@
     .ac-search-cn-ctns.close {
       display: none; }
   .ac-search-cn-ctn {
-    width: calc(100% - 100px);
+    width: calc(100% - 90px);
     display: inline-block; }
   .ac-search-cn-formitem {
     width: calc(100% / 5);
@@ -252,7 +252,7 @@
       color: #cccccc;
       font-size: 13px; }
   .ac-search-cn-btns {
-    width: 100px;
+    width: 90px;
     display: inline-block;
     height: 32px;
     display: flex;
