@@ -138,7 +138,7 @@ class AcSearchPanel extends Component {
             <Provider store={this.store}>
             <div className={clsfix} onKeyDown={(e)=>{
                 if(e.keyCode==13){
-                    search()
+                    search(e)
                 }
             }}>
                 <div className={`${clsfix}-header`} >
