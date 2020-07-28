@@ -215,7 +215,11 @@ var AcSearchPanel = function (_Component) {
             { store: this.store },
             _react2["default"].createElement(
                 'div',
-                { className: clsfix },
+                { className: clsfix, onKeyDown: function onKeyDown(e) {
+                        if (e.keyCode == 13) {
+                            search(e);
+                        }
+                    } },
                 _react2["default"].createElement(
                     'div',
                     { className: clsfix + '-header' },
@@ -285,13 +289,30 @@ var AcSearchPanel = function (_Component) {
                         _react2["default"].createElement(
                             'div',
                             { className: clsfix + '-btns' },
+                            _react2["default"].createElement(_acBtns2["default"], { type: 'line', localeCookie: localeCookie,
+                                btns: {
+                                    'empty_ys': {
+                                        onClick: reset
+                                    }
+                                },
+                                addToBtns: {
+                                    'empty_ys': {
+                                        name: '重置',
+                                        className: clsfix + '-btns-reset-ys'
+                                    }
+                                }
+                            }),
                             _react2["default"].createElement(_acBtns2["default"], { localeCookie: localeCookie,
                                 btns: {
-                                    search: {
+                                    'search_ys': {
                                         onClick: search
-                                    },
-                                    empty: {
-                                        onClick: reset
+                                    }
+                                },
+                                addToBtns: {
+                                    'search_ys': {
+                                        colors: 'dark',
+                                        name: '搜索',
+                                        className: clsfix + '-btns-search-ys'
                                     }
                                 }
                             })

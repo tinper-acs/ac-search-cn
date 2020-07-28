@@ -190,22 +190,33 @@ class AcSearchPanel extends Component {
                             }
                         </div>
                         <div className={`${clsfix}-btns`}>
-                            <Btns localeCookie={localeCookie}
+                            <Btns type='line' localeCookie={localeCookie}
                                 btns={{
-                                    search:{
-                                        onClick:search,
-                                    },
-                                    empty:{
+                                    'empty_ys':{
                                         onClick:reset,
                                     },
                                 }}
+                                addToBtns={{
+                                    'empty_ys':{ 
+                                        name:'重置',
+                                        className:`${clsfix}-btns-reset-ys`
+                                    }
+                                }} 
                             />
-                            {/* <Button colors='primary' className={`${clsfix}-btns-search`} onClick={search}>
-                                <Icon type='uf-search-light-2'/>
-                            </Button>
-                            <Button colors='primary' bordered className={`${clsfix}-btns-reset`} onClick={reset}>
-                                <Icon type='uf-clean'/>
-                            </Button> */}
+                            <Btns localeCookie={localeCookie}
+                                btns={{
+                                    'search_ys':{
+                                        onClick:search,
+                                    },
+                                }}
+                                addToBtns={{
+                                    'search_ys':{ 
+                                        colors:'dark',
+                                        name:'搜索',
+                                        className:`${clsfix}-btns-search-ys`
+                                    }
+                                }}
+                            />
                         </div>
                     </div>
                 </div>

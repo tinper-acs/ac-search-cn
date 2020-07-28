@@ -1,18 +1,23 @@
 @import '../node_modules/ac-btns/src/Btns.scss';
-
+$border-color: #d9d9d9;
+$border-hover-color: #505766;
 .ac-search-cn {
-    border-bottom: 1px solid #D0D0D0;
+    // border-bottom: 1px solid #D0D0D0;
     &-ctns-out {
         padding-left: 16px;
         padding-right: 16px;
-        background-color: #f3f3f3;
+        // background-color: #f3f3f3;
     }
 
     &-ctns {
         display: flex;
         justify-content: space-between;
         &.close {
-            display: none;
+            .ac-search-cn-ctn {
+                :not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+                    display: none;
+                } 
+            }
         }
     }
 
@@ -22,12 +27,20 @@
     }
 
     &-formitem {
-        width: calc(100% / 5);
+        width: calc(100% / 3);
         padding-right: 8px;
         display: inline-block;
         margin-bottom: 8px;
         position: relative;
         vertical-align: bottom;
+        .u-row{
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+        .input-control{
+            width: calc(100% - 100px);
+        }
         .u-form-control{
             padding: 0 8px;
         }
@@ -38,15 +51,15 @@
         input,
         .u-select .u-select-selection,
         .u-input-number,.u-input-number.u-input-group>span:first-child,.u-input-number.u-input-group>span:last-child {
-            border-color: #d5d6d9;
+            border-color: $border-color;
         }
-        
+        .calendar-picker.u-input-group:hover>input,
         .u-form-control:hover,.u-select-enabled .u-select-selection:hover,.u-input-number:hover{
-            border-color: #8cc6ff;
+            border-color: $border-hover-color;
         }
         .u-form-control:active,.u-select .u-select-selection:active,.u-input-number:active,
         .u-form-control:focus,.u-select .u-select-selection:focus,.u-input-number:focus{
-            border-color: #007ace;
+            border-color: $border-hover-color;
         }
         .u-select .u-select-arrow,.datepicker-container .u-input-group-btn,.datepicker-input-group .u-input-group-btn,
         .u-input-number.u-input-group > span:first-child,.u-input-number.u-input-group > span:last-child,
@@ -66,9 +79,15 @@
         .u-label {
             display: inline-block;
             width: 140px;
+            padding-left: 15px;
+            padding-right: 10px;
             text-align: right;
             font-size: 13px;
             color: #111111;
+            .uf-mi.mast {
+                padding: 0;
+                color: #ff0000;
+            }
         }
 
         &-mast {
@@ -206,17 +225,25 @@
     }
 
     &-btns {
-        width: 90px;
+        width: 120px;
         display: inline-block;
         height: 32px;
         display: flex;
-        justify-content: flex-start;
+        justify-content: flex-end;
         align-self: flex-end;
         margin-bottom: 8px;
         margin-right: 0;
         .u-button {
             padding: 0;
             min-width: auto;
+        }
+        & &-reset-ys {
+            line-height: 32px;
+        }
+        & &-search-ys {
+            background: #505766;
+            color: #fff;
+            border: 1px solid #505766;
         }
     }
 
@@ -249,7 +276,7 @@
         padding-bottom: 8px;
         padding-left: 16px;
         padding-right: 16px;
-        background-color: #f3f3f3;
+        // background-color: #f3f3f3;
         min-height: 40px;
     }
 

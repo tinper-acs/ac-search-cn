@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'mini-store';
+import { Label, Row, Icon } from 'tinper-bee';
 
 const propTypes = {
     label:PropTypes.string.isRequired,
@@ -132,7 +133,7 @@ class FormItem extends Component {
     }
 
     render(){
-        let { required } = this.props;
+        let { required, label } = this.props;
         let classes = 'ac-search-cn-formitem';
         if(required)classes+=' require';
         let str = this.getStr();
@@ -140,18 +141,28 @@ class FormItem extends Component {
             <div className={classes} 
             onMouseEnter={()=>{this.onMouseEnter(str)}} 
             onMouseLeave={this.mouseLeave} >
-                {
-                    this.state.show&&str?<span className='ac-search-cn-formitem-value' 
-                                    onMouseEnter={this.innerMouseEnter} 
-                                    onMouseLeave={this.inneronMouseLeave} 
-                                    style={{'top':this.state.strTop}}>
-                                        <span className={`ac-search-cn-formitem-value-text ${this.state.strTop=='-28px'?'':'top'}`} ref={ref=>this.str = ref}>{str}</span>
-                                    </span>:''
-                }
-                {
-                    required?<span className='ac-search-cn-formitem-mast'>*</span>:''
-                }
-                { this.getChild() }
+                <Row>
+                <Label class="u-label">
+                    {
+                        required?<Icon type="uf-mi" className='mast'></Icon>:''
+                    }
+                    {label}
+                </Label>
+                <div className="input-control">
+                    {/* {
+                        this.state.show&&str?<span className='ac-search-cn-formitem-value' 
+                                        onMouseEnter={this.innerMouseEnter} 
+                                        onMouseLeave={this.inneronMouseLeave} 
+                                        style={{'top':this.state.strTop}}>
+                                            <span className={`ac-search-cn-formitem-value-text ${this.state.strTop=='-28px'?'':'top'}`} ref={ref=>this.str = ref}>{str}</span>
+                                        </span>:''
+                    }
+                    {
+                        required?<span className='ac-search-cn-formitem-mast'>*</span>:''
+                    } */}
+                    { this.getChild() }
+                </div>
+                </Row>
             </div>
         )
 

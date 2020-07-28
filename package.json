@@ -37,7 +37,7 @@
   "changelog": "bee-tools run changelog"
  },
  "dependencies": {
-  "ac-btns": "latest",
+  "ac-btns": "^0.3.3-alpha.0",
   "babel-runtime": "^6.23.0",
   "bee-dropdown": "^2.0.9",
   "bee-icon": "^1.0.11",
