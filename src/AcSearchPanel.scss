@@ -6,7 +6,7 @@ $border-hover-color: #505766;
     &-ctns-out {
         padding-left: 16px;
         padding-right: 16px;
-        // background-color: #f3f3f3;
+        background-color: #fff;
     }
 
     &-ctns {
@@ -30,7 +30,7 @@ $border-hover-color: #505766;
         width: calc(100% / 3);
         padding-right: 8px;
         display: inline-block;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
         position: relative;
         vertical-align: bottom;
         .u-row{
@@ -276,7 +276,7 @@ $border-hover-color: #505766;
         padding-bottom: 8px;
         padding-left: 16px;
         padding-right: 16px;
-        // background-color: #f3f3f3;
+        background-color: #fff;
         min-height: 40px;
     }
 

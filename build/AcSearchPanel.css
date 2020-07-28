@@ -136,7 +136,8 @@
 
 .ac-search-cn-ctns-out {
   padding-left: 16px;
-  padding-right: 16px; }
+  padding-right: 16px;
+  background-color: #fff; }
 
 .ac-search-cn-ctns {
   display: flex;
@@ -322,6 +323,7 @@
   padding-bottom: 8px;
   padding-left: 16px;
   padding-right: 16px;
+  background-color: #fff;
   min-height: 40px; }
 
 .ac-search-cn-case {
