@@ -28,14 +28,14 @@ class FormItem extends Component {
             let ary = [];
             React.Children.map(children,child=>{
                     ary.push(React.cloneElement(child,{
-                        placeholder:label,
+                        // placeholder:label,
                     }))
                 })
             return ary;
             
         }else{
             return React.cloneElement(children,{
-                        placeholder:label,
+                        // placeholder:label,
                     })
         }
     }

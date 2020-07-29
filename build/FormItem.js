@@ -50,13 +50,13 @@ var FormItem = function (_Component) {
                 var ary = [];
                 _react2["default"].Children.map(children, function (child) {
                     ary.push(_react2["default"].cloneElement(child, {
-                        placeholder: label
+                        // placeholder:label,
                     }));
                 });
                 return ary;
             } else {
                 return _react2["default"].cloneElement(children, {
-                    placeholder: label
+                    // placeholder:label,
                 });
             }
         };
