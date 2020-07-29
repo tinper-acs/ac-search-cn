@@ -165,7 +165,7 @@ var AcSearchPanel = function (_Component) {
         };
 
         _this.state = {
-            open: true,
+            open: false,
             type: '1',
             show: false
         };

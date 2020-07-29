@@ -49,7 +49,7 @@ class AcSearchPanel extends Component {
     constructor(props){
         super(props);
         this.state={
-            open:true,
+            open:false,
             type:'1',
             show:false,
         }
