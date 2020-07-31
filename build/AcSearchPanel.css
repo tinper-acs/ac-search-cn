@@ -15,25 +15,32 @@
   min-height: 30px;
   padding: 0 10px;
   min-height: 28px;
-  line-height: 28px; }
+  line-height: 28px;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1); }
+  .ac-btns button.ac-btns-item.u-button.u-button-sm {
+    min-width: 44px;
+    min-height: 22px;
+    line-height: 22px; }
   .ac-btns button.ac-btns-item.u-button:last-child {
     margin-right: 0; }
   .ac-btns button.ac-btns-item.u-button.ac-btns-write {
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
-    border-color: #d0d0d0;
-    color: #111;
-    background-color: #fff; }
+    box-shadow: none;
+    border-color: #d9d9d9;
+    color: #535a69;
+    background-color: #fff;
+    font-weight: 500; }
     .ac-btns button.ac-btns-item.u-button.ac-btns-write:hover {
-      color: #e14c46;
-      border-color: #e14c46;
-      background-color: #fff; }
+      color: #505766;
+      border-color: #505766;
+      background-color: unset;
+      z-index: 2; }
   .ac-btns button.ac-btns-item.u-button.u-button-primary {
-    background-color: #e14c46;
+    background: linear-gradient(90deg, #fa482e, #f32f27);
     color: #fff;
-    border: 1px solid #e14c46;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2); }
+    border: none;
+    box-shadow: none; }
     .ac-btns button.ac-btns-item.u-button.u-button-primary:hover {
-      background-color: #d7332c;
+      background: linear-gradient(90deg, #f32f27, #fa482e);
       color: #fff; }
   .ac-btns button.ac-btns-item.u-button.u-button-secondary {
     background-color: #eceff1;
@@ -44,12 +51,12 @@
       border: 1px solid #dfe1e6;
       background-color: #dfe1e6;
       color: #212121; }
-  .ac-btns button.ac-btns-item.u-button.u-button-dark {
+  .ac-btns button.ac-btns-item.u-button.ac-btns-write.u-button-dark {
     background-color: #505766;
     color: #fff;
     border: 1px solid #505766;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2); }
-    .ac-btns button.ac-btns-item.u-button.u-button-dark:hover {
+    .ac-btns button.ac-btns-item.u-button.ac-btns-write.u-button-dark:hover {
       border: 1px solid #616875;
       background-color: #616875;
       color: #fff; }
@@ -61,7 +68,7 @@
     background-color: #fff;
     height: 30px; }
   .ac-btns button.ac-btns-item.u-button.ac-btns-search {
-    background-color: #e14c46;
+    background: linear-gradient(90deg, #fa482e, #f32f27);
     color: #fff;
     min-width: 52px;
     position: relative;
@@ -89,7 +96,7 @@
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2); }
 
 .ac-btns .icon.ac-btns-add, .ac-btns .icon.ac-btns-update, .ac-btns .icon.ac-btns-delete {
-  color: #e14c46; }
+  color: linear-gradient(90deg, #fa482e, #f32f27); }
   .ac-btns .icon.ac-btns-add .uf, .ac-btns .icon.ac-btns-update .uf, .ac-btns .icon.ac-btns-delete .uf {
     padding: 0; }
 
@@ -132,7 +139,7 @@
   background-color: #ebecf0; }
 
 .ac-btns-dropdown .icon.ac-btns-add, .ac-btns-dropdown .icon.ac-btns-update, .ac-btns-dropdown .icon.ac-btns-delete {
-  color: #e14c46; }
+  color: linear-gradient(90deg, #fa482e, #f32f27); }
 
 .ac-search-cn-ctns-out {
   padding-left: 16px;

@@ -1,6 +1,6 @@
 {
  "name": "ac-search-cn",
- "version": "1.0.0-alpha.2",
+ "version": "0.1.14",
  "description": "AcSearch ui component for react",
  "keywords": [
   "react",
@@ -37,7 +37,7 @@
   "changelog": "bee-tools run changelog"
  },
  "dependencies": {
-  "ac-btns": "^0.3.3-alpha.0",
+  "ac-btns": "latest",
   "babel-runtime": "^6.23.0",
   "bee-dropdown": "^2.0.9",
   "bee-icon": "^1.0.11",
