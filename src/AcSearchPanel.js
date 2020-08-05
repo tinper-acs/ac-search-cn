@@ -170,17 +170,6 @@ class AcSearchPanel extends Component {
                             </Tooltip>
                         </span>:''
                     }
-                    <span className={`${clsfix}-open`} onClick={this.open}>
-                        {
-                            this.state.open?
-                            <span>
-                            {locale.close}<Icon type='uf-arrow-up'/>
-                            </span>
-                            :<span>
-                            {locale.open}<Icon type='uf-arrow-down'/>
-                            </span>
-                        }
-                    </span>
                 </div>
                 <div className={`${clsfix}-ctns-out`}>
                     <div className={ctns}>
@@ -216,6 +205,21 @@ class AcSearchPanel extends Component {
                                     }
                                 }}
                             />
+                            {
+                                children.length > 3 ? 
+                                <span className={`${clsfix}-open`} onClick={this.open}>
+                                    {
+                                        this.state.open?
+                                        <span>
+                                            <Icon type="uf-2arrow-up" />
+                                        </span>
+                                        :<span>
+                                            <Icon type="uf-2arrow-down" />
+                                        </span>
+                                    }
+                                </span>
+                                : null
+                            }
                         </div>
                     </div>
                 </div>

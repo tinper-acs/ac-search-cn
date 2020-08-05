@@ -225,7 +225,7 @@ $border-hover-color: #505766;
     }
 
     &-btns {
-        width: 120px;
+        width: 130px;
         display: inline-block;
         height: 32px;
         display: flex;
@@ -248,21 +248,13 @@ $border-hover-color: #505766;
         color: #9FABBF;
         user-select: none;
         font-size: 12px;
+        line-height: 32px;
 
         .uf {
-            background: #9FABBF;
-            color: #fff;
+            color: #505766;
             padding: 0 2px;
             margin-left: 5px;
             font-size: 14px;
-        }
-
-        &:hover {
-            color: #0073e1;
-
-            .uf {
-                background: #0073e1;
-            }
         }
     }
 

@@ -296,7 +296,7 @@
     font-size: 13px; }
 
 .ac-search-cn-btns {
-  width: 120px;
+  width: 130px;
   display: inline-block;
   height: 32px;
   display: -ms-flexbox;
@@ -320,17 +320,13 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-size: 12px; }
+  font-size: 12px;
+  line-height: 32px; }
   .ac-search-cn-open .uf {
-    background: #9FABBF;
-    color: #fff;
+    color: #505766;
     padding: 0 2px;
     margin-left: 5px;
     font-size: 14px; }
-  .ac-search-cn-open:hover {
-    color: #0073e1; }
-    .ac-search-cn-open:hover .uf {
-      background: #0073e1; }
 
 .ac-search-cn-header {
   padding-top: 8px;

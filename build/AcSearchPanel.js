@@ -258,22 +258,7 @@ var AcSearchPanel = function (_Component) {
                                 this.formatSearchDate(toolTips, locale)
                             )
                         )
-                    ) : '',
-                    _react2["default"].createElement(
-                        'span',
-                        { className: clsfix + '-open', onClick: this.open },
-                        this.state.open ? _react2["default"].createElement(
-                            'span',
-                            null,
-                            locale.close,
-                            _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-up' })
-                        ) : _react2["default"].createElement(
-                            'span',
-                            null,
-                            locale.open,
-                            _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-arrow-down' })
-                        )
-                    )
+                    ) : ''
                 ),
                 _react2["default"].createElement(
                     'div',
@@ -314,7 +299,20 @@ var AcSearchPanel = function (_Component) {
                                         name: '搜索'
                                     }
                                 }
-                            })
+                            }),
+                            children.length > 3 ? _react2["default"].createElement(
+                                'span',
+                                { className: clsfix + '-open', onClick: this.open },
+                                this.state.open ? _react2["default"].createElement(
+                                    'span',
+                                    null,
+                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-2arrow-up' })
+                                ) : _react2["default"].createElement(
+                                    'span',
+                                    null,
+                                    _react2["default"].createElement(_beeIcon2["default"], { type: 'uf-2arrow-down' })
+                                )
+                            ) : null
                         )
                     )
                 )
