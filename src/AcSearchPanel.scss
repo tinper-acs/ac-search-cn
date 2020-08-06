@@ -53,6 +53,7 @@ $border-hover-color: #505766;
         .u-input-number,.u-input-number.u-input-group>span:first-child,.u-input-number.u-input-group>span:last-child {
             border-color: $border-color;
         }
+        .datepicker-input-group.u-input-group:hover > input,
         .calendar-picker.u-input-group:hover>input,
         .u-form-control:hover,.u-select-enabled .u-select-selection:hover,.u-input-number:hover{
             border-color: $border-hover-color;

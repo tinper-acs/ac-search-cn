@@ -178,6 +178,7 @@
   .ac-search-cn-formitem .u-select .u-select-selection,
   .ac-search-cn-formitem .u-input-number, .ac-search-cn-formitem .u-input-number.u-input-group > span:first-child, .ac-search-cn-formitem .u-input-number.u-input-group > span:last-child {
     border-color: #d9d9d9; }
+  .ac-search-cn-formitem .datepicker-input-group.u-input-group:hover > input,
   .ac-search-cn-formitem .calendar-picker.u-input-group:hover > input,
   .ac-search-cn-formitem .u-form-control:hover, .ac-search-cn-formitem .u-select-enabled .u-select-selection:hover, .ac-search-cn-formitem .u-input-number:hover {
     border-color: #505766; }
