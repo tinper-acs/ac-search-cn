@@ -4,13 +4,13 @@
 
 .ac-btns span.ac-btns-item {
   color: #0073e1;
-  font-size: 13px; }
+  font-size: 12px; }
   .ac-btns span.ac-btns-item[disabled] {
     color: #dfe1e6; }
 
 .ac-btns button.ac-btns-item.u-button {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
-  font-size: 13px;
+  font-size: 12px;
   min-width: 60px;
   min-height: 30px;
   padding: 0 10px;
@@ -38,7 +38,9 @@
     background: linear-gradient(90deg, #fa482e, #f32f27);
     color: #fff;
     border: none;
-    box-shadow: none; }
+    box-shadow: none;
+    height: 30px;
+    line-height: 30px; }
     .ac-btns button.ac-btns-item.u-button.u-button-primary:hover {
       background: linear-gradient(90deg, #f32f27, #fa482e);
       color: #fff; }
@@ -67,6 +69,10 @@
     color: #111;
     background-color: #fff;
     height: 30px; }
+  .ac-btns button.ac-btns-item.u-button.ac-btns-add .uf {
+    font-size: 12px;
+    padding: 0;
+    margin-right: 3px; }
   .ac-btns button.ac-btns-item.u-button.ac-btns-search {
     background: linear-gradient(90deg, #fa482e, #f32f27);
     color: #fff;
@@ -90,10 +96,10 @@
       position: relative;
       bottom: 2px; }
   .ac-btns button.ac-btns-item.u-button.u-button[disabled], .ac-btns button.ac-btns-item.u-button.u-button[disabled]:hover {
-    background: #fff;
-    color: #dfe1e6;
-    border-color: #d0d0d0;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2); }
+    border: 1px solid #d9d9d9;
+    color: rgba(0, 0, 0, 0.25);
+    background: #f7f7f7;
+    box-shadow: none; }
 
 .ac-btns .icon.ac-btns-add, .ac-btns .icon.ac-btns-update, .ac-btns .icon.ac-btns-delete {
   color: linear-gradient(90deg, #fa482e, #f32f27); }
@@ -201,7 +207,7 @@
     padding-left: 15px;
     padding-right: 10px;
     text-align: right;
-    font-size: 13px;
+    font-size: 12px;
     color: #111111; }
     .ac-search-cn-formitem .u-label .uf-mi.mast {
       padding: 0;
@@ -258,7 +264,7 @@
       background: #fff;
       box-shadow: 1px 1px 10px px rgba(0, 0, 0, 0.3);
       pointer-events: all;
-      font-size: 13px;
+      font-size: 12px;
       word-break: break-all; }
       .ac-search-cn-formitem-value-text.top {
         text-align: left;
@@ -284,11 +290,11 @@
     color: #2B344B; }
   .ac-search-cn-formitem input::-webkit-input-placeholder {
     color: #cccccc !important;
-    font-size: 13px; }
+    font-size: 12px; }
   .ac-search-cn-formitem .u-select-selection-placeholder,
   .ac-search-cn-formitem .u-select-search-field-placeholder {
     color: #cccccc;
-    font-size: 13px; }
+    font-size: 12px; }
 
 .ac-search-cn-btns {
   width: 130px;
@@ -348,12 +354,12 @@
   padding-left: 20px; }
 
 .ac-search-cn-selected-sample {
-  font-size: 13px;
+  font-size: 12px;
   cursor: pointer; }
 
 .ac-search-cn-selected-complex-item {
   line-height: 15px;
-  font-size: 13px; }
+  font-size: 12px; }
   .ac-search-cn-selected-complex-item-title {
     margin-left: 8px;
     width: 65px;
